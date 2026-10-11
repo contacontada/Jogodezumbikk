@@ -207,7 +207,7 @@ input{-webkit-user-select:text;user-select:text}
 <script>
 (()=>{'use strict';
 /* ===================== NÚCLEO ===================== */
-const TS=32,MW=128,MH=128,PR=8;
+const TS=32,PR=8,MAXN=8,MAXS=32+24*MAXN;let BN=6,MW=0,MH=0;function setBN(n){BN=n;MW=MH=32+24*n}setBN(6);
 const $=id=>document.getElementById(id);
 const clamp=(v,a,b)=>v<a?a:v>b?b:v;
 const lerp=(a,b,t)=>a+(b-a)*t;
@@ -260,7 +260,39 @@ bag2:{n:'Mochila militar',i:'🎒',w:1.2,t:'bag',slots:12,kg:18,d:'+12 espaços,
 fire:{n:'Fogueira',i:'🏕️',w:3,t:'place',d:'Ilumina, cura mais rápido e queima zumbis próximos.'},
 chest:{n:'Baú',i:'🧳',w:6,t:'place',d:'Guarde itens no abrigo.'},
 decoy:{n:'Isca sonora',i:'📢',w:.3,t:'decoy',d:'Joga um som à frente e atrai zumbis para lá.'},
-bunkerkey:{n:'Chave do bunker',i:'🗝️',w:.1,t:'key',d:'Abre o bunker militar.'}
+bunkerkey:{n:'Chave do bunker',i:'🗝️',w:.1,t:'key',d:'Abre o bunker militar.'},
+tuna:{n:'Atum enlatado',i:'🐟',w:.35,t:'food',v:{hun:26,thi:-2},s:6,d:'Proteína em lata (+26 fome).'},
+jerky:{n:'Carne seca',i:'🥓',w:.2,t:'food',v:{hun:34,thi:-6},s:6,d:'Muita fome saciada, mas dá sede.'},
+cereal:{n:'Barra de cereal',i:'🍫',w:.1,t:'food',v:{hun:14,ene:8},s:10,d:'Lanche leve que dá um pouco de energia.'},
+peach:{n:'Pêssego em calda',i:'🍑',w:.35,t:'food',v:{hun:18,thi:8},s:6,d:'Doce e hidratante.'},
+mre:{n:'Ração militar',i:'🍱',w:.5,t:'food',v:{hun:55,thi:8,ene:10},s:4,d:'Refeição completa. Rara.'},
+juice:{n:'Suco de caixinha',i:'🧃',w:.3,t:'drink',v:{thi:28,hun:6},s:6,d:'Hidrata e alimenta um pouco.'},
+energy:{n:'Energético',i:'⚡',w:.3,t:'drink',v:{thi:14,ene:38},s:6,d:'Recupera bastante energia.'},
+coffee:{n:'Garrafa térmica de café',i:'☕',w:.5,t:'drink',v:{thi:8,ene:26},s:4,d:'Desperta e dá energia.'},
+painkiller:{n:'Analgésico',i:'💊',w:.05,t:'med',v:{hp:22},s:10,d:'Cura 22 de vida.'},
+antis:{n:'Antisséptico',i:'🧴',w:.2,t:'med',v:{inf:-15,bleed:1},s:5,d:'Reduz a infecção (-15) e estanca sangramento.'},
+adrenal:{n:'Adrenalina',i:'💉',w:.1,t:'med',v:{hp:15,ene:60},s:3,d:'Cura um pouco e restaura muita energia.'},
+rope:{n:'Corda',i:'🪢',w:.4,t:'mat',s:6,d:'Para fabricar mochilas e armas.'},
+tape:{n:'Fita adesiva',i:'🧷',w:.1,t:'mat',s:10,d:'Prende e conserta de tudo.'},
+metal:{n:'Chapa de metal',i:'🔲',w:1,t:'mat',s:6,d:'Material pesado e resistente.'},
+fuel:{n:'Combustível',i:'⛽',w:.8,t:'mat',s:4,d:'Inflamável. Base de molotovs.'},
+bottle:{n:'Garrafa vazia',i:'🍾',w:.3,t:'mat',s:8,d:'Pode virar um molotov.'},
+powder:{n:'Pólvora',i:'⚫',w:.1,t:'mat',s:10,d:'Usada em explosivos caseiros.'},
+pan:{n:'Frigideira',i:'🍳',w:1,t:'melee',dmg:17,rng:36,cd:.5,noise:90,hits:1,kb:50,sta:4,d:'Barulhenta, mas melhor que os punhos.'},
+machete:{n:'Facão',i:'🗡️',w:1.1,t:'melee',dmg:29,rng:50,cd:.55,noise:90,hits:2,kb:55,sta:5,d:'Rápido e afiado. Acerta até 2 alvos.'},
+sledge:{n:'Marreta',i:'🔨',w:4,t:'melee',dmg:50,rng:46,cd:1.15,noise:140,hits:2,kb:150,sta:9,d:'Pesada e brutal. Empurra tudo para trás.'},
+katana:{n:'Katana',i:'⚔️',w:1.3,t:'melee',dmg:37,rng:54,cd:.42,noise:60,hits:2,kb:45,sta:4,d:'Rara. Rápida, longa e silenciosa.'},
+revolver:{n:'Revólver .357',i:'🔫',w:1.2,t:'gun',dmg:48,rng:420,cd:.55,mag:6,ammo:'a357',spread:.04,pel:1,noise:880,reload:2.2,snd:'pistol',d:'Potente. Precisa de munição .357.'},
+smg:{n:'Submetralhadora',i:'🔫',w:2.6,t:'gun',dmg:19,rng:300,cd:.1,mag:30,ammo:'a9',spread:.11,pel:1,noise:800,reload:1.9,snd:'pistol',d:'Rajadas rápidas com munição 9mm. Gasta muito.'},
+crossbow:{n:'Besta',i:'🏹',w:2.2,t:'gun',dmg:55,rng:420,cd:1.1,mag:1,ammo:'bolt',spread:.02,pel:1,pierce:2,noise:40,reload:1.5,snd:'bow',d:'Quase silenciosa. Usa virotes.'},
+a357:{n:'Munição .357',i:'🔹',w:.03,t:'ammo',s:40,d:'Para o revólver.'},
+bolt:{n:'Virote',i:'🔻',w:.04,t:'ammo',s:30,d:'Para a besta.'},
+bag3:{n:'Mochila de trilha',i:'🎒',w:1,t:'bag',slots:9,kg:13,d:'+9 espaços, +13 kg.'},
+bag4:{n:'Mochila tática',i:'🎒',w:1.6,t:'bag',slots:18,kg:28,d:'+18 espaços, +28 kg. Rara.'},
+molotov:{n:'Coquetel molotov',i:'🔥',w:.5,t:'throw',fuse:.9,ic:'🔥',d:'Joga à frente e cria um incêndio. Queima zumbis.'},
+grenade:{n:'Granada caseira',i:'💣',w:.5,t:'throw',fuse:2.2,ic:'💣',d:'Explode 2 segundos depois. Cuidado com o próprio alcance!'},
+alcohol:{n:'Álcool',i:'🧪',w:.3,t:'mat',s:6,d:'Desinfeta. Usado em antissépticos.'},
+map:{n:'Mapa da região',i:'🗺️',w:.1,t:'map',d:'Use para revelar uma grande área do mapa ao redor.'}
 };
 const WEAPON=id=>IT[id]&&(IT[id].t==='melee'||IT[id].t==='gun');
 const FIST={n:'Punhos',i:'✊',t:'melee',dmg:7,rng:28,cd:.5,noise:40,hits:1,kb:20,sta:2};
@@ -277,20 +309,31 @@ const RC=[
 {out:'chest',q:1,need:{plank:6,nail:6},lvl:2,tool:'hammer'},
 {out:'nbat',q:1,need:{bat:1,nail:5},lvl:3,tool:'hammer'},
 {out:'bag1',q:1,need:{cloth:8,scrap:2},lvl:4},
-{out:'medkit',q:1,need:{bandage:3,antib:1,cloth:2},lvl:5}
+{out:'medkit',q:1,need:{bandage:3,antib:1,cloth:2},lvl:5},
+{out:'rope',q:1,need:{cloth:3},lvl:1},
+{out:'bolt',q:4,need:{wood:1,scrap:1},lvl:2},
+{out:'molotov',q:1,need:{bottle:1,fuel:1,cloth:1},lvl:2},
+{out:'machete',q:1,need:{metal:1,tape:1,wood:1},lvl:3,tool:'hammer'},
+{out:'grenade',q:1,need:{powder:2,scrap:2,tape:1},lvl:4},
+{out:'crossbow',q:1,need:{wood:3,rope:2,metal:1,tape:1},lvl:4,tool:'hammer'},
+{out:'bag3',q:1,need:{cloth:6,rope:2,tape:1},lvl:3},
+{out:'bag4',q:1,need:{bag3:1,rope:2,metal:1,tape:2},lvl:6},
+{out:'antis',q:1,need:{alcohol:1,cloth:1},lvl:2}
 ];
 
 /* tabelas de saque: [id,peso,qmin,qmax] */
 const LT={
-kitchen:[['canned',10,1,2],['bread',8,1,1],['apple',6,1,2],['water',8,1,2],['soda',6,1,1],['chips',6,1,2],['knife',2],['cloth',2,1,2]],
-bedroom:[['cloth',10,1,3],['bandage',5,1,2],['antib',1.2],['lantern',1.5],['bat',1.2],['bag1',1.5],['scrap',3,1,2],['canned',2],['a9',2,4,9]],
-store:[['canned',12,1,3],['water',10,1,3],['soda',8,1,2],['chips',8,1,3],['bread',6,1,2],['apple',6,1,2],['bag1',1.5],['cloth',3,1,2],['lantern',1]],
-hardware:[['plank',10,1,3],['nail',12,4,12],['scrap',10,1,3],['hammer',3],['axe',2],['crowbar',3],['wood',2,1,2],['lantern',3],['knife',2],['cloth',2]],
-med:[['bandage',12,1,3],['medkit',4],['antib',6,1,2],['cure',.5],['cloth',4,1,2],['water',3],['soda',1]],
-police:[['a9',12,6,15],['pistol',4],['shell',6,3,8],['shotgun',2.2],['bandage',3,1,2],['crowbar',2],['bat',1],['rifle',.7],['a762',1.5,3,8],['medkit',1.5]],
-military:[['a762',8,6,14],['rifle',3],['shell',5,4,10],['shotgun',2],['a9',5,8,16],['medkit',5],['antib',4,1,2],['bag2',3],['cure',1.5],['canned',4,2,3]],
-outdoor:[['canned',6,1,2],['water',6,1,2],['cloth',6,1,2],['bandage',4,1,2],['scrap',6,1,2],['a9',3,3,8],['knife',1.5],['bat',1],['antib',1],['bag1',1],['chips',4],['apple',4]],
-drop:[['medkit',6],['antib',6,1,2],['cure',2],['rifle',2],['a762',6,8,16],['shotgun',2],['shell',6,6,12],['pistol',3],['a9',6,10,20],['bag2',3],['canned',5,2,4],['water',5,2,3]]
+kitchen:[['canned',10,1,2],['bread',8,1,1],['apple',6,1,2],['water',8,1,2],['soda',6,1,1],['chips',6,1,2],['knife',2],['cloth',2,1,2],['tuna',5,1,2],['jerky',2],['cereal',3],['peach',3],['juice',3],['coffee',1.5],['pan',1.2],['bottle',2],['alcohol',.6]],
+bedroom:[['cloth',10,1,3],['bandage',5,1,2],['antib',1.2],['lantern',1.5],['bat',1.2],['bag1',1.5],['scrap',3,1,2],['canned',2],['a9',2,4,9],['painkiller',2.5,1,2],['rope',1.5],['tape',1.5],['cereal',2],['map',.8],['katana',.15],['bag3',.6],['bottle',1]],
+store:[['canned',12,1,3],['water',10,1,3],['soda',8,1,2],['chips',8,1,3],['bread',6,1,2],['apple',6,1,2],['bag1',1.5],['cloth',3,1,2],['lantern',1],['tuna',5,1,2],['cereal',5,1,3],['juice',5,1,2],['energy',4],['peach',3],['jerky',2],['coffee',1.5],['map',.7],['bag3',1],['bottle',2]],
+hardware:[['plank',10,1,3],['nail',12,4,12],['scrap',10,1,3],['hammer',3],['axe',2],['crowbar',3],['wood',2,1,2],['lantern',3],['knife',2],['cloth',2],['rope',4,1,2],['tape',5],['metal',4],['fuel',2.5],['machete',2],['sledge',.8],['powder',.6],['pan',.8],['alcohol',1],['bottle',1.5]],
+med:[['bandage',12,1,3],['medkit',4],['antib',6,1,2],['cure',.5],['cloth',4,1,2],['water',3],['soda',1],['painkiller',8,1,3],['antis',5],['adrenal',1.2],['alcohol',3],['tape',2]],
+police:[['a9',12,6,15],['pistol',4],['shell',6,3,8],['shotgun',2.2],['bandage',3,1,2],['crowbar',2],['bat',1],['rifle',.7],['a762',1.5,3,8],['medkit',1.5],['revolver',1.8],['smg',.6],['a357',4,4,10],['tape',1.5],['painkiller',2],['map',1],['bag3',1]],
+military:[['a762',8,6,14],['rifle',3],['shell',5,4,10],['shotgun',2],['a9',5,8,16],['medkit',5],['antib',4,1,2],['bag2',3],['cure',1.5],['canned',4,2,3],['smg',2],['revolver',1.5],['a357',3,4,10],['mre',5],['adrenal',2],['grenade',2],['powder',2],['bag4',1.2],['katana',.4],['map',2]],
+outdoor:[['canned',6,1,2],['water',6,1,2],['cloth',6,1,2],['bandage',4,1,2],['scrap',6,1,2],['a9',3,3,8],['knife',1.5],['bat',1],['antib',1],['bag1',1],['chips',4],['apple',4],['tuna',2],['jerky',2],['cereal',2],['juice',2],['energy',1.5],['rope',2],['tape',1.5],['painkiller',1.5],['crowbar',.5],['machete',.7],['map',.8],['bag3',1],['bottle',1.5]],
+drop:[['medkit',6],['antib',6,1,2],['cure',2],['rifle',2],['a762',6,8,16],['shotgun',2],['shell',6,6,12],['pistol',3],['a9',6,10,20],['bag2',3],['canned',5,2,4],['water',5,2,3],['mre',6,1,2],['smg',1.5],['revolver',1.5],['a357',4,6,12],['adrenal',3],['grenade',2,1,2],['bag4',2],['katana',.5],['map',2],['energy',3,1,2],['fuel',1.5]]
+,farm:[['canned',6,1,2],['tuna',3],['jerky',5,1,2],['apple',9,1,3],['peach',5,1,2],['bread',6,1,2],['water',6,1,2],['juice',3],['rope',5,1,2],['wood',5,1,3],['axe',2.2],['machete',2],['sledge',1.2],['hammer',1.5],['bottle',3],['fuel',3],['coffee',2],['bag3',1]],
+gas:[['soda',10,1,3],['chips',10,1,3],['energy',8,1,2],['cereal',6,1,2],['coffee',4],['juice',5],['map',3],['fuel',6,1,2],['tape',4],['alcohol',3],['bottle',3],['lantern',2],['painkiller',2],['crowbar',1]]
 };
 const CK={
 fridge:{n:'Geladeira',tab:'kitchen',n1:1,n2:3,t:1.2},
@@ -343,7 +386,7 @@ function play(n,x,y,a){
  case 'hit':N({f0:900,f1:200,d:.16,g:.35*v,pan});Tn({f0:110,f1:45,d:.14,g:.3*v,pan});break;
  case 'zhit':N({ft:'bandpass',f0:500,f1:200,d:.18,g:.32*v,pan});Tn({type:'sawtooth',f0:160,f1:70,d:.15,g:.12*v,pan});break;
  case 'thud':N({f0:600,d:.1,g:.25*v,pan});break;
- case 'shot':{const big=a==='shotgun'?1:a==='rifle'?.9:.8;N({f0:6000,f1:200,d:a==='shotgun'?.5:.32,g:big*v,pan});Tn({type:'square',f0:220,f1:50,d:.18,g:.35*v,pan});break}
+ case 'shot':{const bow=a==='bow';const big=bow?.1:a==='shotgun'?1:a==='rifle'?.9:.8;N({f0:bow?2500:6000,f1:200,d:a==='shotgun'?.5:.32,g:big*v,pan});Tn({type:'square',f0:bow?420:220,f1:50,d:bow?.1:.18,g:(bow?.05:.35)*v,pan});break}
  case 'click':Tn({type:'square',f0:1400,d:.03,g:.08});break;
  case 'reload':Tn({type:'square',f0:300,d:.04,g:.1});Tn({type:'square',f0:520,d:.05,g:.1,at:.35});N({ft:'bandpass',f0:2000,d:.05,g:.1,at:.9});break;
  case 'pick':Tn({f0:600,f1:900,d:.1,g:.15});break;
@@ -426,19 +469,21 @@ function tileColor(i){const t=tiles[i];return MC[t]||'#000'}
 function reveal(tx,ty,r){for(let dy=-r;dy<=r;dy++)for(let dx=-r;dx<=r;dx++){if(dx*dx+dy*dy>r*r)continue;const x=tx+dx,y=ty+dy;if(x<0||y<0||x>=MW||y>=MH)continue;const i=K(x,y);if(!explored[i]){explored[i]=1;mapCtx.fillStyle=tileColor(i);mapCtx.fillRect(x,y,1,1)}}}
 function rebuildMap(){mapCtx.clearRect(0,0,MW,MH);for(let y=0;y<MH;y++)for(let x=0;x<MW;x++){const i=K(x,y);if(explored[i]){mapCtx.fillStyle=tileColor(i);mapCtx.fillRect(x,y,1,1)}}}
 
-function genWorld(seed){
- SEED=seed;const R=mulberry32(seed);const rn=(a,b)=>a+Math.floor(R()*(b-a+1));
+function genWorld(seed,bn){
+ if(bn)setBN(bn);SEED=seed;const R=mulberry32(seed);const rn=(a,b)=>a+Math.floor(R()*(b-a+1));
  tiles=new Uint8Array(MW*MH);under=new Uint8Array(MW*MH);aux=new Uint8Array(MW*MH);bmap=new Int16Array(MW*MH);explored=new Uint8Array(MW*MH);
  ops={};cont={};buildings=[];markers=[];zspawn=[];barrelInit=[];startPos=null;
  mapCv=document.createElement('canvas');mapCv.width=MW;mapCv.height=MH;mapCtx=mapCv.getContext('2d');
- const roads=[8,32,56,80,104];
+ const roads=[];for(let k=0;k<=BN;k++)roads.push(8+24*k);
+ const edgeM=roads[BN]+3;
+ const areaK=(MW*MH)/(128*128);
  const inBand=v=>roads.some(r=>v>=r&&v<=r+2);
- for(let y=0;y<MH;y++)for(let x=0;x<MW;x++){const i=K(x,y);tiles[i]=T.GRASS;aux[i]=rn(0,2);if(x<8||y<8||x>=107||y>=107){if(R()<.42){tiles[i]=T.TREE;under[i]=T.GRASS}else if(R()<.06)tiles[i]=T.DIRT}}
+ for(let y=0;y<MH;y++)for(let x=0;x<MW;x++){const i=K(x,y);tiles[i]=T.GRASS;aux[i]=rn(0,2);if(x<8||y<8||x>=edgeM||y>=edgeM){if(R()<.42){tiles[i]=T.TREE;under[i]=T.GRASS}else if(R()<.06)tiles[i]=T.DIRT}}
  for(const r of roads)for(let a=0;a<MW;a++)for(let k=0;k<3;k++){tiles[K(r+k,a)]=T.ROAD;tiles[K(a,r+k)]=T.ROAD;aux[K(r+k,a)]=rn(0,1);aux[K(a,r+k)]=rn(0,1)}
  for(const r of roads)for(let a=0;a<MW;a++)if(!inBand(a)){tiles[K(r+1,a)]=T.LINE;aux[K(r+1,a)]=1;tiles[K(a,r+1)]=T.LINE;aux[K(a,r+1)]=2}
- const isFloorKind=k=>k==='house'||k==='cabin'||k==='restaurant';
- const STY={house:3,cabin:2,restaurant:0,hardware:0,hospital:1,police:1,bunker:1,store:1};
- const NAMES={hospital:'Hospital',police:'Delegacia',store:'Supermercado',hardware:'Loja de ferragens',restaurant:'Restaurante',bunker:'Bunker militar'};
+ const isFloorKind=k=>k==='house'||k==='cabin'||k==='restaurant'||k==='barn';
+ const STY={house:3,cabin:2,restaurant:0,hardware:0,hospital:1,police:1,bunker:1,store:1,barn:2,gas:1};
+ const NAMES={hospital:'Hospital',police:'Delegacia',store:'Supermercado',hardware:'Loja de ferragens',restaurant:'Restaurante',bunker:'Bunker militar',barn:'Celeiro',gas:'Posto de gasolina'};
  function carve(dx,dy,side){const v={N:[0,-1],S:[0,1],W:[-1,0],E:[1,0]}[side];let x=dx+v[0],y=dy+v[1];for(let n=0;n<9;n++){if(x<0||y<0||x>=MW||y>=MH)break;const i=K(x,y);if(tiles[i]===T.ROAD||tiles[i]===T.LINE)break;if(tiles[i]===T.GRASS||tiles[i]===T.DIRT||tiles[i]===T.TREE||tiles[i]===T.SIDE||tiles[i]===T.RUBBLE){tiles[i]=T.SIDE;aux[i]=9;under[i]=T.SIDE}x+=v[0];y+=v[1]}}
  function building(x,y,w,h,kind,side,o){o=o||{};
   const fl=isFloorKind(kind)?T.WOOD:T.TILEF;const st=STY[kind]||0;const bi=buildings.length+1;
@@ -465,23 +510,31 @@ function genWorld(seed){
   if(kind==='house'){pc('fridge','kitchen');const n=rn(2,3);for(let i=0;i<n;i++)pc('cabinet',R()<.5?'kitchen':'bedroom');const nb2=rn(1,2);for(let i=0;i<nb2;i++)pb();if(R()<.3)pc('crate','hardware')}
   else if(kind==='cabin'){pc('cabinet','bedroom');pc('cabinet','kitchen');pc('crate','hardware');pb()}
   else if(kind==='restaurant'){for(let i=0;i<3;i++)pc('fridge','kitchen');for(let i=0;i<3;i++)pc('cabinet','kitchen')}
-  else if(kind==='hardware'||kind==='store'){const tab=kind==='store'?'store':'hardware';for(let r2=3;r2<=h-4;r2+=3)for(let c=3;c<=w-4;c++){if(c%4===0)continue;const X=x+c,Y=y+r2;if(tiles[K(X,Y)]===fl&&Math.max(Math.abs(X-inx),Math.abs(Y-iny))>2){tiles[K(X,Y)]=T.CONT;cont[K(X,Y)]={k:'shelf',tab,items:null}}}
-   for(let i=0;i<3;i++)pc(kind==='store'?'fridge':'crate',kind==='store'?'kitchen':'hardware')}
+  else if(kind==='barn'){for(let i=0;i<5;i++)pc('crate','farm');for(let i=0;i<2;i++)pc('cabinet','farm')}
+  else if(kind==='hardware'||kind==='store'||kind==='gas'){const tab=kind==='store'?'store':kind==='gas'?'gas':'hardware';for(let r2=3;r2<=h-4;r2+=3)for(let c=3;c<=w-4;c++){if(c%4===0)continue;const X=x+c,Y=y+r2;if(tiles[K(X,Y)]===fl&&Math.max(Math.abs(X-inx),Math.abs(Y-iny))>2){tiles[K(X,Y)]=T.CONT;cont[K(X,Y)]={k:'shelf',tab,items:null}}}
+   for(let i=0;i<3;i++)pc(kind==='store'?'fridge':'crate',kind==='store'?'kitchen':kind==='gas'?'gas':'hardware')}
   else if(kind==='hospital'){for(let i=0;i<9;i++)pc('medcab','med');for(let i=0;i<6;i++)pb();pc('locker','med');pc('locker','med')}
   else if(kind==='police'){for(let i=0;i<6;i++)pc('locker','police')}
   else if(kind==='bunker'){for(let i=0;i<4;i++)pc('mil','military')}
   carve(dx,dy,side);
   if(NAMES[kind]){markers.push({k:kind,x:(x+w/2)*TS,y:(y+h/2)*TS,n:NAMES[kind],b:buildings.length-1})}
   // zumbis internos
-  const zc={house:rn(0,2),cabin:rn(0,1),restaurant:rn(2,4),hardware:rn(2,3),store:rn(4,7),hospital:rn(9,13),police:rn(3,5),bunker:0}[kind]||0;
-  for(let n=0;n<zc;n++){for(let t=0;t<12;t++){const X=x+rn(1,w-2),Y=y+rn(1,h-2);if(tiles[K(X,Y)]===fl&&!(startPos&&Math.hypot(X*TS-startPos.x,Y*TS-startPos.y)<14*TS)){zspawn.push({x:(X+.5)*TS,y:(Y+.5)*TS,t:'in',ind:true,dk:kind==='hospital'?1:.5});break}}}
+  const zc={house:rn(0,2),cabin:rn(0,1),restaurant:rn(2,4),hardware:rn(2,3),store:rn(4,7),hospital:rn(9,13),police:rn(3,5),barn:0,gas:0,bunker:0}[kind]||0;
+  const zc2=zc+((kind==='barn')?rn(2,4):(kind==='gas')?rn(1,3):0);
+  for(let n=0;n<zc2;n++){for(let t=0;t<12;t++){const X=x+rn(1,w-2),Y=y+rn(1,h-2);if(tiles[K(X,Y)]===fl&&!(startPos&&Math.hypot(X*TS-startPos.x,Y*TS-startPos.y)<14*TS)){zspawn.push({x:(X+.5)*TS,y:(Y+.5)*TS,t:'in',ind:true,dk:kind==='hospital'?1:.5});break}}}
   if(kind==='hospital'){zspawn.push({x:(x+4.5)*TS,y:(y+3.5)*TS,t:'tank'});zspawn.push({x:(x+w-4.5)*TS,y:(y+h-3.5)*TS,t:'tank'})}
   return b}
  const clearRect=(x,y,w,h)=>{for(let j=y;j<y+h;j++)for(let i=x;i<x+w;i++)if(i>=0&&j>=0&&i<MW&&j<MH&&bmap[K(i,j)]===0){tiles[K(i,j)]=T.GRASS;aux[K(i,j)]=rn(0,2)}};
  function house(lot,o){const w=rn(6,8),h=rn(5,7);const ox=rn(0,9-w),oy=rn(0,9-h);const side=lot.sides[rn(0,1)];clearRect(lot.x,lot.y,9,9);const lk=(o&&o.noLock)?0:(R()<.22?1:0);return building(lot.x+ox,lot.y+oy,w,h,'house',side,{part:w>=8?'v':'',lock:lk,win:.75})}
  function yard(lot){for(let j=0;j<9;j++)for(let i=0;i<9;i++){const idx=K(lot.x+i,lot.y+j);if(!bmap[idx]&&tiles[idx]===T.GRASS&&R()<.08){tiles[idx]=T.TREE;under[idx]=T.GRASS}}}
  const lotsOf=B=>[{x:B.x0+1,y:B.y0+1,sides:['N','W']},{x:B.x0+11,y:B.y0+1,sides:['N','E']},{x:B.x0+1,y:B.y0+11,sides:['S','W']},{x:B.x0+11,y:B.y0+11,sides:['S','E']}];
- const BT=[['forest','res','res','park'],['res','store','hosp','res'],['res','police','super','forest'],['park','res','forest','res']];
+ let BT;
+ if(BN===4)BT=[['forest','res','res','park'],['res','store','hosp','res'],['res','police','super','forest'],['park','res','forest','res']];
+ else{BT=[];const wt=[['res',34],['forest',16],['park',9],['farm',8],['gas',6],['store',7],['super',6],['hosp',4],['police',5]];const tot=wt.reduce((a,b)=>a+b[1],0);
+  for(let bj=0;bj<BN;bj++){BT.push([]);for(let bi=0;bi<BN;bi++){let r=R()*tot,k=0;for(;k<wt.length-1;k++){r-=wt[k][1];if(r<0)break}BT[bj].push(wt[k][0])}}
+  BT[2][0]='res';
+  for(const [kd,n] of [['hosp',2],['police',2],['super',2],['store',2],['farm',2],['gas',2]]){let c=0;for(const row of BT)for(const v of row)if(v===kd)c++;for(let t=0;c<n&&t<500;t++){const bj=rn(0,BN-1),bi=rn(0,BN-1);if(bi===0&&bj===2)continue;const v=BT[bj][bi];if(v==='res'||v==='forest'||v==='park'){BT[bj][bi]=kd;c++}}}
+ }
  const fns={
   res(B){lotsOf(B).forEach((lot,k)=>{const start=B.bi===0&&B.bj===2&&k===0;if(!start&&R()<.12){yard(lot);return}const b=house(lot,{noLock:start});if(start){const inx=b.inner.x,iny=b.inner.y;startPos={x:(inx+.5)*TS,y:(iny+.5)*TS};b.start=true;b.name='Seu abrigo';markers.push({k:'home',x:(b.x+b.w/2)*TS,y:(b.y+b.h/2)*TS,n:'Seu abrigo',b:buildings.length-1});
     // baú inicial
@@ -493,29 +546,34 @@ function genWorld(seed){
   store(B){clearRect(B.x0+1,B.y0+1,19,19);building(B.x0+1,B.y0+1,9,7,'restaurant','N',{win:.8});building(B.x0+11,B.y0+1,9,7,'hardware','N',{win:.8});house({x:B.x0+1,y:B.y0+11,sides:['S','W']});house({x:B.x0+11,y:B.y0+11,sides:['S','E']})},
   hosp(B){clearRect(B.x0+1,B.y0+1,19,19);building(B.x0+1,B.y0+3,19,13,'hospital','S',{off:9,win:.9,part:'h'})},
   police(B){clearRect(B.x0+1,B.y0+1,19,19);building(B.x0+1,B.y0+1,13,9,'police','N',{off:6,lock:1,win:.3,part:'c'});house({x:B.x0+1,y:B.y0+11,sides:['S','W']});house({x:B.x0+11,y:B.y0+11,sides:['S','E']})},
+  farm(B){clearRect(B.x0+1,B.y0+1,19,19);building(B.x0+1,B.y0+1,12,8,'barn','S',{off:5,win:.15});house({x:B.x0+11,y:B.y0+11,sides:['S','E']});
+   for(let y=B.y0+11;y<B.y0+19;y++)for(let x=B.x0+1;x<B.x0+10;x++){const i=K(x,y);if(!bmap[i]&&tiles[i]===T.GRASS&&(y%2===0))tiles[i]=T.DIRT}},
+  gas(B){clearRect(B.x0+1,B.y0+1,19,19);building(B.x0+1,B.y0+1,9,7,'gas','S',{off:4,win:.9});
+   for(const [bx,by] of [[B.x0+3,B.y0+10],[B.x0+5,B.y0+10],[B.x0+4,B.y0+12]]){barrelInit.push({x:(bx+.5)*TS,y:(by+.5)*TS})}
+   house({x:B.x0+11,y:B.y0+1,sides:['N','E']});house({x:B.x0+11,y:B.y0+11,sides:['S','E']})},
   super(B){clearRect(B.x0+1,B.y0+1,19,19);building(B.x0+1,B.y0+3,19,11,'store','W',{off:5,win:.9})}
  };
- for(let bj=0;bj<4;bj++)for(let bi=0;bi<4;bi++){
+ for(let bj=0;bj<BN;bj++)for(let bi=0;bi<BN;bi++){
   const x0=roads[bi]+3,y0=roads[bj]+3,x1=roads[bi+1]-1,y1=roads[bj+1]-1;
   for(let y=y0;y<=y1;y++)for(let x=x0;x<=x1;x++){const i=K(x,y);tiles[i]=T.GRASS;aux[i]=rn(0,2);if(x===x0||x===x1||y===y0||y===y1){tiles[i]=T.SIDE;aux[i]=rn(0,1);under[i]=T.SIDE}}
   fns[BT[bj][bi]]({x0,y0,x1,y1,bi,bj});
  }
  // bunker na floresta NE
- clearRect(111,0,11,9);building(113,2,7,5,'bunker','S',{off:3,lock:2,win:0});
+ clearRect(MW-17,0,11,9);building(MW-15,2,7,5,'bunker','S',{off:3,lock:2,win:0});
  // fallback do ponto inicial
  if(!startPos){startPos={x:(roads[0]+4.5)*TS,y:(roads[2]+4.5)*TS}}
  const sx=startPos.x/TS,sy=startPos.y/TS;
  // carros
  for(let y=0;y<MH;y++)for(let x=0;x<MW;x++){const i=K(x,y);if(tiles[i]!==T.ROAD)continue;if(R()<.012&&Math.hypot(x-sx,y-sy)>8){let ok=true;for(let a=-1;a<=1;a++)for(let c=-1;c<=1;c++)if(tiles[K(x+a,y+c)]===T.CAR)ok=false;if(!ok)continue;tiles[i]=T.CAR;under[i]=T.ROAD;aux[i]=rn(0,7);if(R()<.4)cont[i]={k:'trunk',tab:'outdoor',items:null}}}
  // mochilas
- let nb=0;for(let t=0;t<1500&&nb<32;t++){const x=rn(2,MW-3),y=rn(2,MH-3),i=K(x,y),tt=tiles[i];if((tt===T.GRASS||tt===T.SIDE||tt===T.DIRT)&&!bmap[i]&&aux[i]!==9&&Math.hypot(x-sx,y-sy)>10){under[i]=tt;tiles[i]=T.CONT;cont[i]={k:'bag',tab:'outdoor',items:null};nb++}}
+ let nb=0;for(let t=0;t<1500&&nb<Math.round(32*areaK);t++){const x=rn(2,MW-3),y=rn(2,MH-3),i=K(x,y),tt=tiles[i];if((tt===T.GRASS||tt===T.SIDE||tt===T.DIRT)&&!bmap[i]&&aux[i]!==9&&Math.hypot(x-sx,y-sy)>10){under[i]=tt;tiles[i]=T.CONT;cont[i]={k:'bag',tab:'outdoor',items:null};nb++}}
  // barris
- let nbar=0;for(let t=0;t<1500&&nbar<18;t++){const x=rn(2,MW-3),y=rn(2,MH-3),i=K(x,y),tt=tiles[i];if((tt===T.GRASS||tt===T.ROAD||tt===T.DIRT||tt===T.SIDE)&&!bmap[i]&&Math.hypot(x-sx,y-sy)>14){barrelInit.push({x:(x+.5)*TS,y:(y+.5)*TS});nbar++}}
+ let nbar=0;for(let t=0;t<1500&&nbar<Math.round(18*areaK);t++){const x=rn(2,MW-3),y=rn(2,MH-3),i=K(x,y),tt=tiles[i];if((tt===T.GRASS||tt===T.ROAD||tt===T.DIRT||tt===T.SIDE)&&!bmap[i]&&Math.hypot(x-sx,y-sy)>14){barrelInit.push({x:(x+.5)*TS,y:(y+.5)*TS});nbar++}}
  // zumbis externos
- const grp=(cx,cy,n,rad)=>{for(let k=0;k<n;k++){for(let t=0;t<10;t++){const X=Math.floor(cx+rn(-rad,rad)),Y=Math.floor(cy+rn(-rad,rad));if(X<1||Y<1||X>=MW-1||Y>=MH-1)continue;const tt=tiles[K(X,Y)];if(!SOLID[tt]&&tt!==T.DOOR&&tt!==T.WIN&&!bmap[K(X,Y)]&&Math.hypot(X-sx,Y-sy)>16){zspawn.push({x:(X+.5)*TS,y:(Y+.5)*TS,t:'out',ind:false,dk:Math.hypot(X-64,Y-64)/64});break}}}};
+ const grp=(cx,cy,n,rad)=>{for(let k=0;k<n;k++){for(let t=0;t<10;t++){const X=Math.floor(cx+rn(-rad,rad)),Y=Math.floor(cy+rn(-rad,rad));if(X<1||Y<1||X>=MW-1||Y>=MH-1)continue;const tt=tiles[K(X,Y)];if(!SOLID[tt]&&tt!==T.DOOR&&tt!==T.WIN&&!bmap[K(X,Y)]&&Math.hypot(X-sx,Y-sy)>16){zspawn.push({x:(X+.5)*TS,y:(Y+.5)*TS,t:'out',ind:false,dk:Math.hypot(X-MW/2,Y-MH/2)/(MW/2)});break}}}};
  for(const a of roads)for(const b of roads)if(R()<.45)grp(a+1,b+1,rn(2,4),3);
- for(let bj=0;bj<4;bj++)for(let bi=0;bi<4;bi++){const ty=BT[bj][bi];const cx=roads[bi]+13,cy=roads[bj]+13;if(ty==='forest'){grp(cx-5,cy,rn(3,4),4);grp(cx+5,cy+4,rn(3,4),4)}else if(ty==='park')grp(cx,cy,rn(2,3),5);else if(ty==='res')grp(cx,cy,rn(1,2),8)}
- zspawn.push({x:57.5*TS,y:57.5*TS,t:'screamer'});
+ for(let bj=0;bj<BN;bj++)for(let bi=0;bi<BN;bi++){const ty=BT[bj][bi];const cx=roads[bi]+13,cy=roads[bj]+13;if(ty==='forest'){grp(cx-5,cy,rn(3,4),4);grp(cx+5,cy+4,rn(3,4),4)}else if(ty==='park')grp(cx,cy,rn(2,3),5);else if(ty==='res')grp(cx,cy,rn(1,2),8);else if(ty==='farm'||ty==='gas')grp(cx,cy,rn(1,2),7)}
+ zspawn.push({x:(MW/2-6.5)*TS,y:(MH/2-6.5)*TS,t:'screamer'});
  zspawn=zspawn.filter(s=>Math.hypot(s.x-startPos.x,s.y-startPos.y)>(s.ind?16:14)*TS);
  // minimapa
  reveal(Math.floor(sx),Math.floor(sy),10);
@@ -531,7 +589,7 @@ function moveBody(e,dx,dy,r,forZ){const nx=e.x+dx;if(!hitBox(nx,e.y,r,forZ))e.x=
 function blocksSight(tx,ty){if(tx<0||ty<0||tx>=MW||ty>=MH)return true;const i=ty*MW+tx,t=tiles[i];if(t===T.WALL||t===T.TREE)return true;if(t===T.DOOR){const o=ops[i];return !(o&&o.open)}if(t===T.WIN){const o=ops[i];return !!(o&&o.bar>0)}return false}
 function los(x0,y0,x1,y1){const dx=x1-x0,dy=y1-y0,n=Math.ceil(Math.hypot(dx,dy)/12);for(let i=1;i<n;i++){const x=x0+dx*i/n,y=y0+dy*i/n;if(blocksSight(Math.floor(x/TS),Math.floor(y/TS)))return false}return true}
 /* campo de fluxo (zumbis -> jogador) */
-const fq=new Int32Array(MW*MH);
+const fq=new Int32Array(MAXS*MAXS);
 function passTile(t,i){if(SOLID[t])return false;if(t===T.DOOR){const o=ops[i];if(o&&o.lock>0&&!o.open)return false}return true}
 function computeFlow(px,py,flow){flow.fill(-1);const Rr=38;let h=0,tl=0;const s=K(px,py);flow[s]=0;fq[tl++]=s;
  while(h<tl){const c=fq[h++];const cx=c%MW,cy=(c/MW)|0,d=flow[c];if(d>=Rr*2)continue;
@@ -543,7 +601,7 @@ function flowTarget(z,flow){const tx=Math.floor(z.x/TS),ty=Math.floor(z.y/TS);if
 /* ===================== ESTADO ===================== */
 let W=0,H=0,DPR=1,sc=1;
 let Z=[],corpses=[],drops=[],fires=[],barrels=[],parts=[],decals=[],tracers=[],events=[],nextId=1,dropSeq=1,fireSeq=1;
-const LP={id:0,local:true,flow:new Int16Array(MW*MH).fill(-1),fT:0,fk:-1,get x(){return P.x},get y(){return P.y},get hp(){return P.dead?0:P.hp},get crouch(){return P.crouch},get sl(){return P.skills.stealth.l}};
+const LP={id:0,local:true,flow:new Int16Array(MAXS*MAXS).fill(-1),fT:0,fk:-1,get x(){return P.x},get y(){return P.y},get hp(){return P.dead?0:P.hp},get crouch(){return P.crouch},get sl(){return P.skills.stealth.l}};
 let PLS=[LP];
 const isH=()=>NET.mode==='host',isG=()=>NET.mode==='guest';
 function touch(i){if(NET.mode==='host')NET.dirty.add(i)}
@@ -577,7 +635,7 @@ function newTM(){return{min:8*60,wx:{type:'clear',left:240,rain:0,fog:0},lastDay
 function initEntities(){Z=[];corpses=[];drops=[];fires=[];barrels=barrelInit.map((b,i)=>({n:i+1,x:b.x,y:b.y,hp:30,hitT:0}));parts=[];decals=[];tracers=[];events=[];nextId=1;dropSeq=1;fireSeq=1}
 function spawnWorldZ(){for(const s of zspawn){let t=s.t;if(t==='in'||t==='out')t=pickZT(s.dk||.5,1);const z=spawnZ(t,s.x,s.y);z.hx=s.x;z.hy=s.y}}
 function startNew(){
- genWorld((Math.random()*1e9)|0);initEntities();P=newPlayer();P.x=startPos.x;P.y=startPos.y;P.ang=Math.PI/2;
+ genWorld((Math.random()*1e9)|0,6);initEntities();P=newPlayer();P.x=startPos.x;P.y=startPos.y;P.ang=Math.PI/2;
  P.inv=[{id:'bat',q:1},{id:'water',q:1},{id:'canned',q:1},{id:'bandage',q:2}];P.eq.weapon='bat';
  TM=newTM();spawnWorldZ();cam.x=P.x;cam.y=P.y;state='play';ui.panel=null;ui.cont=null;ui.sel=-1;
  reveal(Math.floor(P.x/TS),Math.floor(P.y/TS),10);
@@ -609,7 +667,11 @@ function useItem(i){const s=P.inv[i];if(!s)return;const d=IT[s.id];
  else if(d.t==='bag'){equipBag(i)}
  else if(d.t==='place'){placeItem(i)}
  else if(d.t==='decoy'){const x=P.x+Math.cos(P.ang)*240,y=P.y+Math.sin(P.ang)*240;if(isG())NET.send({a:'decoy',x:x|0,y:y|0});else TM.decoys.push({x,y,t:9,n:0});toast('📢 Isca lançada!');consume(i);closePanel()}
+ else if(d.t==='throw'){let x=P.x,y=P.y;const ca=Math.cos(P.ang),sa=Math.sin(P.ang);for(let k=1;k<=15;k++){const nx=P.x+ca*k*16,ny=P.y+sa*k*16;if(solidAt(Math.floor(nx/TS),Math.floor(ny/TS),false))break;x=nx;y=ny}
+  if(isG())NET.send({a:'decoy',x:x|0,y:y|0,k:s.id});else TM.decoys.push({x,y,t:d.fuse,n:0,k:s.id,ic:d.ic});toast(d.i+' '+d.n+' lançado!');play2('swing');noise(P.x,P.y,200,'p');consume(i);closePanel()}
+ else if(d.t==='map'){reveal(Math.floor(P.x/TS),Math.floor(P.y/TS),46);toast('🗺️ Mapa usado: uma grande área foi revelada.','good');play2('click');consume(i);closePanel()}
  else toast(d.n+': '+(d.d||'sem uso direto'))}
+function detonate(d){if(d.k==='grenade'){explode(d.x,d.y)}else if(d.k==='molotov'){for(let k=0;k<7;k++)fires.push({n:fireSeq++,x:d.x+rr(-34,34),y:d.y+rr(-34,34),t:22});play2('hit',d.x,d.y);noise(d.x,d.y,320,'d');spark(d.x,d.y,12,'#fa3')}}
 const FXS={shot:1,boom:1,zhit:1,zdie:1,groan:1,door:1,bar:1,hit:1,thud:1,chop:1,swing:0,cough:1};
 const play2=(n,x,y,a)=>{AU.play(n,x,y,a);if(NET.mode!=='off'&&x!==undefined&&FXS[n]){const f=['s',n,x|0,y|0,a===undefined?0:a];if(NET.mode==='host')NET.fx(f);else NET.send({a:'fx',f})}};
 function equipWeapon(id){if(P.eq.weapon===id){P.eq.weapon=null;toast('Desequipado');return}P.eq.weapon=id;if(IT[id].t==='gun'&&P.mag[id]===undefined)P.mag[id]=0;toast(IT[id].i+' '+IT[id].n+' equipado','good');play2('click')}
@@ -791,7 +853,7 @@ function dynSpawn(){const day=dayNow(),night=ambient()>.4;let cnt=0;for(const z 
  const base=PLS[Math.floor(Math.random()*PLS.length)];if(base.hp<=0)return;
  const vr=Math.max(Math.hypot(W,H)/(2*sc)+60,520);
  for(let t=0;t<12;t++){const a=rr(0,TAU),d=vr+rr(40,260);const x=base.x+Math.cos(a)*d,y=base.y+Math.sin(a)*d;const tx=Math.floor(x/TS),ty=Math.floor(y/TS);if(tx<2||ty<2||tx>=MW-2||ty>=MH-2)continue;const i=K(tx,ty),tt=tiles[i];if(SOLID[tt]||tt===T.DOOR||tt===T.WIN||bmap[i])continue;
-  const z=spawnZ(pickZT(Math.hypot(tx-64,ty-64)/64,day),x,y,{dyn:true});z.hp=z.mhp=Math.round(z.hp*(1+.03*Math.min(day-1,10)));z.st='invest';z.tx=base.x+rr(-160,160);z.ty=base.y+rr(-160,160);z.inv=14;return}}
+  const z=spawnZ(pickZT(Math.hypot(tx-MW/2,ty-MH/2)/(MW/2),day),x,y,{dyn:true});z.hp=z.mhp=Math.round(z.hp*(1+.03*Math.min(day-1,10)));z.st='invest';z.tx=base.x+rr(-160,160);z.ty=base.y+rr(-160,160);z.inv=14;return}}
 /* ===================== ZUMBIS: IA ===================== */
 function updZ(z,dt){
  const d0=ZT[z.t];z.hitT-=dt;z.stun-=dt;z.cdA-=dt;z.gT-=dt;z.scr-=dt;
@@ -858,7 +920,7 @@ function updateWorldObjs(dt){
  fires=fires.filter(f=>f.t>0);
  for(const b of barrels){if(b.hitT>0)b.hitT-=dt;if(b.boom>0){b.boom-=dt;if(b.boom<=0){b.boom=0;const bx=b.x,by=b.y;b.dead=true;explode(bx,by)}}}
  barrels=barrels.filter(b=>!b.dead);
- for(let i=TM.decoys.length-1;i>=0;i--){const d=TM.decoys[i];d.t-=dt;d.n-=dt;if(d.n<=0){d.n=1.2;noise(d.x,d.y,520,'d');play2('bar',d.x,d.y);spark(d.x,d.y,2,'#ff6')}if(d.t<=0)TM.decoys.splice(i,1)}
+ for(let i=TM.decoys.length-1;i>=0;i--){const d=TM.decoys[i];d.t-=dt;if(d.k){if(d.t<=0){TM.decoys.splice(i,1);detonate(d)}continue}d.n-=dt;if(d.n<=0){d.n=1.2;noise(d.x,d.y,520,'d');play2('bar',d.x,d.y);spark(d.x,d.y,2,'#ff6')}if(d.t<=0)TM.decoys.splice(i,1)}
  }
 function updateFX(dt){
  for(const p of parts){p.l-=dt;p.x+=p.vx*dt;p.y+=p.vy*dt;const f=Math.pow(.05,dt);p.vx*=f;p.vy*=f}
@@ -906,14 +968,14 @@ const b64=a=>{let s='';for(let i=0;i<a.length;i+=8192)s+=String.fromCharCode.app
 const unb64=(s,len)=>{const b=atob(s),a=new Uint8Array(len);for(let i=0;i<len;i++)a[i]=b.charCodeAt(i);return a};
 function hasSave(){const d=LS.get('zsv_save',null);return !!(d&&d.v===3)}
 function buildSave(full){
- const d={v:3,seed:SEED,tiles:b64(tiles),under:b64(under),aux:b64(aux),ops,cont,TM:Object.assign({},TM),drops,fires,barrels:barrels.map(b=>({n:b.n,x:b.x,y:b.y,hp:b.hp})),events};
+ const d={v:3,bn:BN,seed:SEED,tiles:b64(tiles),under:b64(under),aux:b64(aux),ops,cont,TM:Object.assign({},TM),drops,fires,barrels:barrels.map(b=>({n:b.n,x:b.x,y:b.y,hp:b.hp})),events};
  if(full){d.expl=b64(explored);const pp=Object.assign({},P);delete pp.act;d.P=pp;d.Z=Z.filter(z=>!z.dead).map(z=>({t:z.t,x:Math.round(z.x),y:Math.round(z.y),hp:z.hp,hx:Math.round(z.hx),hy:Math.round(z.hy),dyn:z.dyn}))}
  return d}
 function saveChar(){if(!P||P.dead)return false;const pp=Object.assign({},P);delete pp.act;return LS.set('zsv_mpchar',{v:1,P:pp})}
 function saveGame(){if(!P||state!=='play'||P.dead)return false;if(isG())return saveChar();return LS.set('zsv_save',buildSave(true))}
 function fixIds(){let m=0;for(const x of drops)if(x.n)m=Math.max(m,x.n);for(const x of drops)if(!x.n)x.n=++m;dropSeq=m+1;m=0;for(const x of fires)if(x.n)m=Math.max(m,x.n);for(const x of fires)if(!x.n)x.n=++m;fireSeq=m+1;barrels.forEach((b,i)=>{if(!b.n)b.n=i+1})}
 function applyWorld(d,guest){
- genWorld(d.seed);tiles=unb64(d.tiles,MW*MH);under=unb64(d.under,MW*MH);aux=unb64(d.aux,MW*MH);if(d.expl)explored=unb64(d.expl,MW*MH);
+ genWorld(d.seed,d.bn||4);tiles=unb64(d.tiles,MW*MH);under=unb64(d.under,MW*MH);aux=unb64(d.aux,MW*MH);if(d.expl)explored=unb64(d.expl,MW*MH);
  ops=d.ops||{};cont=d.cont||{};rebuildMap();initEntities();TM=Object.assign(newTM(),d.TM);TM.decoys=TM.decoys||[];
  if(!guest){Z=[];(d.Z||[]).forEach(s=>{spawnZ(s.t,s.x,s.y,{hp:s.hp,hx:s.hx,hy:s.hy,dyn:s.dyn})})}
  drops=d.drops||[];fires=d.fires||[];barrels=(d.barrels||[]).map(b=>({n:b.n,x:b.x,y:b.y,hp:b.hp,hitT:0}));events=d.events||[];fixIds()}
@@ -1022,6 +1084,10 @@ function drawWeaponSprite(g,id){g.fillStyle='#bbb';
  else if(id==='axe'){g.fillStyle='#7a5a32';g.fillRect(5,-1,15,2);g.fillStyle='#aab';g.fillRect(16,-5,5,7)}
  else if(id==='hammer'){g.fillStyle='#7a5a32';g.fillRect(5,-1,11,2);g.fillStyle='#889';g.fillRect(14,-4,4,8)}
  else if(id==='crowbar'){g.fillStyle='#555';g.fillRect(5,-1,16,2);g.fillRect(19,-3,2,3)}
+ else if(id==='pan'){g.fillStyle='#543';g.fillRect(5,-1,8,2);g.fillStyle='#333';g.beginPath();g.arc(16,0,4.5,0,TAU);g.fill()}
+ else if(id==='machete'){g.fillStyle='#dde';g.fillRect(9,-1.6,13,3.2);g.fillStyle='#432';g.fillRect(4,-1.2,5,2.4)}
+ else if(id==='sledge'){g.fillStyle='#7a5a32';g.fillRect(4,-1,19,2);g.fillStyle='#667';g.fillRect(19,-5,6,10)}
+ else if(id==='katana'){g.fillStyle='#eef';g.fillRect(9,-.9,21,1.8);g.fillStyle='#c33';g.fillRect(4,-1.2,5,2.4);g.fillStyle='#cb4';g.fillRect(8,-2.4,1.6,4.8)}
  else if(id==='spear'){g.fillStyle='#8a6a3a';g.fillRect(4,-.8,26,1.6);g.fillStyle='#ccd';g.fillRect(29,-2,5,4)}}
 function lightCircle(lg,x,y,r,a){const g=lg.createRadialGradient(x,y,r*.1,x,y,r);g.addColorStop(0,'rgba(0,0,0,'+a+')');g.addColorStop(.55,'rgba(0,0,0,'+a*.65+')');g.addColorStop(1,'rgba(0,0,0,0)');lg.fillStyle=g;lg.beginPath();lg.arc(x,y,r,0,TAU);lg.fill()}
 function render(now){
@@ -1044,7 +1110,7 @@ function render(now){
  for(const b of barrels){if(!vis(b.x,b.y))continue;ctx.fillStyle='rgba(0,0,0,.3)';ctx.beginPath();ctx.ellipse(b.x+1,b.y+4,9,6,0,0,TAU);ctx.fill();ctx.fillStyle=b.hitT>0?'#fff':'#b83a1e';ctx.fillRect(b.x-7,b.y-9,14,18);ctx.fillStyle='#e8d030';ctx.fillRect(b.x-7,b.y-3,14,4);ctx.fillStyle='#702010';ctx.fillRect(b.x-7,b.y-9,14,2);ctx.fillRect(b.x-7,b.y+7,14,2)}
  ctx.font='14px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
  for(const dr of drops){if(!vis(dr.x,dr.y))continue;ctx.fillStyle='rgba(255,220,120,'+(.2+.15*Math.sin(frameT*4+dr.x))+')';ctx.beginPath();ctx.arc(dr.x,dr.y,9,0,TAU);ctx.fill();ctx.fillStyle='#fff';ctx.fillText(IT[dr.id].i,dr.x,dr.y+1)}
- for(const d of TM.decoys){ctx.fillStyle='#ccc';ctx.fillText('📢',d.x,d.y)}
+ for(const d of TM.decoys){ctx.fillStyle='#ccc';ctx.fillText(d.ic||'📢',d.x,d.y)}
  ctx.textBaseline='alphabetic';
  for(const z of Z){if(!z.dead&&vis(z.x,z.y))drawZ(ctx,z)}
  if(P.sleeping){ctx.font='13px sans-serif';ctx.fillStyle='#fff';ctx.textAlign='center';ctx.fillText('Z',P.x+8,P.y-8-Math.sin(frameT*2)*3);ctx.fillText('z',P.x+14,P.y-14-Math.sin(frameT*2+1)*3)}
@@ -1054,7 +1120,7 @@ function render(now){
  for(const p of parts){if(!vis(p.x,p.y))continue;ctx.globalAlpha=clamp(p.l/p.m,0,1);ctx.fillStyle=p.c;ctx.fillRect(p.x-p.s/2,p.y-p.s/2,p.s,p.s)}ctx.globalAlpha=1;
  // telhados
  for(let i=0;i<buildings.length;i++){const b=buildings[i];if(b.roof<.03)continue;if(b.x+b.w<vx0||b.x>vx1||b.y+b.h<vy0||b.y>vy1)continue;
-  const col={house:'#6a3f35',cabin:'#5a4228',restaurant:'#7a3f3a',hardware:'#4a5a6a',hospital:'#aeb6b8',police:'#3a4660',store:'#4a6a58',bunker:'#4a5238'}[b.kind]||'#555';
+  const col={house:'#6a3f35',cabin:'#5a4228',restaurant:'#7a3f3a',hardware:'#4a5a6a',hospital:'#aeb6b8',police:'#3a4660',store:'#4a6a58',bunker:'#4a5238',barn:'#7a3a2a',gas:'#c8a030'}[b.kind]||'#555';
   ctx.globalAlpha=b.roof;ctx.fillStyle=col;ctx.fillRect((b.x+1)*TS,(b.y+1)*TS,(b.w-2)*TS,(b.h-2)*TS);ctx.fillStyle='rgba(0,0,0,.14)';for(let k=1;k<b.h-1;k++)ctx.fillRect((b.x+1)*TS,(b.y+k)*TS+TS-2,(b.w-2)*TS,2);
   if(b.name&&b.roof>.5){ctx.fillStyle='rgba(255,255,255,.85)';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.fillText(b.name,(b.x+b.w/2)*TS,(b.y+b.h/2)*TS+4)}ctx.globalAlpha=1}
  // marcador de eventos no mundo (queda de suprimentos)
@@ -1087,7 +1153,7 @@ function drawMinimap(){const s=miniCv.width;mctx.fillStyle='#050805';mctx.fillRe
  const ar=ambient();if(ar>.4){mctx.fillStyle='rgba(0,0,30,.3)';mctx.fillRect(0,0,s,s)}}
 function drawBigMap(cvs){const g=cvs.getContext('2d');const s=cvs.width,k=s/MW;g.imageSmoothingEnabled=false;g.fillStyle='#050805';g.fillRect(0,0,s,s);g.drawImage(mapCv,0,0,MW,MH,0,0,s,s);
  g.font='bold '+Math.round(k*3.4)+'px sans-serif';g.textAlign='center';
- for(const m of markers){const tx=Math.floor(m.x/TS),ty=Math.floor(m.y/TS);if(!explored[K(tx,ty)])continue;g.fillStyle='#000';g.fillRect(tx*k-k*2,ty*k-k*2,k*4,k*4);g.fillStyle={hospital:'#f66',police:'#68f',store:'#6d6',hardware:'#fa4',restaurant:'#fc6',bunker:'#9a6',home:'#ff4'}[m.k]||'#fff';g.fillRect(tx*k-k*1.4,ty*k-k*1.4,k*2.8,k*2.8);g.fillStyle='#fff';g.fillText(m.n,tx*k,ty*k-k*2.6)}
+ for(const m of markers){const tx=Math.floor(m.x/TS),ty=Math.floor(m.y/TS);if(!explored[K(tx,ty)])continue;g.fillStyle='#000';g.fillRect(tx*k-k*2,ty*k-k*2,k*4,k*4);g.fillStyle={hospital:'#f66',police:'#68f',store:'#6d6',hardware:'#fa4',restaurant:'#fc6',bunker:'#9a6',home:'#ff4',barn:'#c84',gas:'#fd4'}[m.k]||'#fff';g.fillRect(tx*k-k*1.4,ty*k-k*1.4,k*2.8,k*2.8);g.fillStyle='#fff';g.fillText(m.n,tx*k,ty*k-k*2.6)}
  for(const e of events){g.fillStyle=e.type==='drop'?'#fc3':'#f44';g.beginPath();g.arc(e.x/TS*k,e.y/TS*k,k*1.8,0,TAU);g.fill();g.fillStyle='#fff';g.fillText(e.type==='drop'?'Suprimentos':'Horda',e.x/TS*k,e.y/TS*k-k*2.4)}
  for(const p of others()){g.fillStyle='#4af';g.beginPath();g.arc(p.x/TS*k,p.y/TS*k,k*1.8,0,TAU);g.fill();g.fillStyle='#fff';g.fillText(p.name||'',p.x/TS*k,p.y/TS*k-k*2.4)}
  g.save();g.translate(P.x/TS*k,P.y/TS*k);g.rotate(P.ang);g.fillStyle='#fff';g.strokeStyle='#000';g.beginPath();g.moveTo(k*2.4,0);g.lineTo(-k*1.6,-k*1.6);g.lineTo(-k*1.6,k*1.6);g.closePath();g.fill();g.stroke();g.restore()}
@@ -1147,7 +1213,7 @@ async function pingServer(base,ms){if(!base)return false;const ac=new AbortContr
 function keepAliveStop(){if(NET.kaT){clearInterval(NET.kaT);NET.kaT=0}}
 function keepAliveStart(){keepAliveStop();const base=httpBase(NET.url);if(!base)return;pingServer(base);NET.kaT=setInterval(()=>{if(NET.mode!=='off')pingServer(base)},NET.pingMs||600000)}
 /* ---------- anfitrião ---------- */
-function addPeer(id,name){const p={id,name,s:{},x:0,y:0,hp:100,crouch:false,sl:0,flow:new Int16Array(MW*MH).fill(-1),fT:0,fk:-1,local:false};p.x=startPos.x;p.y=startPos.y;NET.players.set(id,p);NET.lastAr='';
+function addPeer(id,name){const p={id,name,s:{},x:0,y:0,hp:100,crouch:false,sl:0,flow:new Int16Array(MAXS*MAXS).fill(-1),fT:0,fk:-1,local:false};p.x=startPos.x;p.y=startPos.y;NET.players.set(id,p);NET.lastAr='';
  NET.sendTo(id,{k:'world',d:buildSave(false),id,hostName:NET.name});toast('🟢 '+name+' entrou na sala','good');syncPLS()}
 function removePeer(id){const p=NET.players.get(id);if(p)toast('⚪ '+p.name+' saiu','');NET.players.delete(id);syncPLS()}
 const fin=v=>Number.isFinite(+v);
@@ -1167,7 +1233,7 @@ function hostMsg(from,d){const p=NET.players.get(from);if(!p||!d||typeof d.a!=='
  case 'place':{if(!fin(d.tx)||!fin(d.ty))break;hostPlace(d.k,d.tx|0,d.ty|0);break}
  case 'feed':{const f=fires.find(x=>x.n===d.n);if(f)f.t=Math.min(600,f.t+90);break}
  case 'stump':{const i=d.i|0;if(tiles[i]===T.TREE&&nearTile(p,i,200)){tiles[i]=T.STUMP;touch(i)}break}
- case 'decoy':if(fin(d.x)&&fin(d.y))TM.decoys.push({x:+d.x,y:+d.y,t:9,n:0});break;
+ case 'decoy':if(fin(d.x)&&fin(d.y)){const di=(d.k==='molotov'||d.k==='grenade')?IT[d.k]:null;TM.decoys.push(di?{x:+d.x,y:+d.y,t:di.fuse,n:0,k:d.k,ic:di.ic}:{x:+d.x,y:+d.y,t:9,n:0})}break;
  case 'fx':{const f=d.f;if(!Array.isArray(f)||(f[0]!=='s'&&f[0]!=='tr'))break;applyFx(f);NET.fxBuf.push({f,o:from});break}
  case 'dead':p.hp=0;p.s.d=1;toast('💀 '+p.name+' morreu','bad');break}}
 function myState(){const dx=P.x-(NET.lx===undefined?P.x:NET.lx),dy=P.y-(NET.ly===undefined?P.y:NET.ly);NET.lx=P.x;NET.ly=P.y;
@@ -1294,7 +1360,7 @@ function renderPanel(){
    if(from==='c'){h+='<button class="btn pri" data-a="take">Pegar</button><button class="btn" data-a="takeall">Pegar tudo</button>'}
    else{const t=d.t;
     if(t==='food')h+='<button class="btn pri" data-a="use">Comer</button>';else if(t==='drink')h+='<button class="btn pri" data-a="use">Beber</button>';else if(t==='med')h+='<button class="btn pri" data-a="use">Usar</button>';
-    else if(t==='melee'||t==='gun')h+='<button class="btn pri" data-a="use">'+(isEq(s.id)?'Desequipar':'Equipar')+'</button>';else if(t==='bag')h+='<button class="btn pri" data-a="use">Equipar mochila</button>';else if(t==='place')h+='<button class="btn pri" data-a="use">Colocar à frente</button>';else if(t==='decoy')h+='<button class="btn pri" data-a="use">Lançar</button>';
+    else if(t==='melee'||t==='gun')h+='<button class="btn pri" data-a="use">'+(isEq(s.id)?'Desequipar':'Equipar')+'</button>';else if(t==='bag')h+='<button class="btn pri" data-a="use">Equipar mochila</button>';else if(t==='place')h+='<button class="btn pri" data-a="use">Colocar à frente</button>';else if(t==='decoy')h+='<button class="btn pri" data-a="use">Lançar</button>';else if(t==='throw')h+='<button class="btn pri" data-a="use">Arremessar</button>';else if(t==='map')h+='<button class="btn pri" data-a="use">Usar mapa</button>';
     if(c&&c.k==='chest')h+='<button class="btn" data-a="stash">Guardar no baú</button>';
     h+='<button class="btn dng" data-a="drop1">Descartar 1</button>';if(s.q>1)h+='<button class="btn dng" data-a="dropall">Descartar tudo</button>'}
    h+='</div>'}
@@ -1357,7 +1423,7 @@ const TUTO=[
  ['🧟 Bem-vindo, sobrevivente','<p>A cidade caiu. Você acorda no <b>seu abrigo</b> com um taco, um pouco de comida e curativos. Explore, saqueie, construa defesas e sobreviva o máximo de dias possível.</p><ul><li>De dia a visão é boa; à noite escurece (lanterna ajuda).</li><li>Chuva abafa seus passos; neblina reduz a visão — sua e dos zumbis.</li><li>O jogo é salvo automaticamente e ao sair/trocar de app.</li></ul>'],
  ['🎮 Controles','<p><b>📱 Celular (horizontal):</b></p><ul><li><b>Joystick</b> (canto inferior esquerdo): mover.</li><li>Botões à direita: <b>⚔ Atacar</b>, <b>✋ Usar/Interagir</b>, <b>👟 Correr</b> (toque para ligar/desligar), <b>🔄 Recarregar</b>, 🥷 Agachar, 🔨 Barricar, 🩹 Curar.</li><li>Toque na arma embaixo para trocar. Topo: 🎒 inventário, 🗺 mapa, ⏸ pausa.</li></ul><p><b>💻 PC:</b></p><ul><li><b>WASD/setas</b> mover · <b>mouse</b> mira · <b>clique/Espaço</b> ataca · <b>Shift</b> corre · <b>C</b> agacha</li><li><b>E</b> interagir · <b>R</b> recarregar · <b>I/Tab</b> inventário · <b>M</b> mapa · <b>B</b> barricar · <b>H</b> curar · <b>Q</b> trocar arma · <b>Esc</b> pausa</li></ul>'],
  ['🍖 Sobrevivência','<ul><li><b>Fome, sede e energia</b> caem devagar. Zerando, você perde vida. Durma em camas 🛏 (interagir) para recuperar energia.</li><li><b>Fôlego</b> (barra amarela) gasta ao correr e atacar.</li><li><b>Sangramento 🩸</b>: use curativo. <b>Infecção ☣</b>: mordidas e arranhões podem infectar — tome <b>antibiótico</b> cedo; o <b>soro</b> cura de vez.</li><li>Fogueiras 🔥 curam mais rápido e queimam zumbis.</li></ul>'],
- ['🧟 Zumbis e combate','<ul><li><b>Zumbi</b> comum: lento. <b>Corredor</b>: rápido e frágil. <b>Tanque</b>: resistente e forte. <b>Gritador</b>: raro — grita e atrai a horda; carrega a chave do bunker.</li><li>Zumbis te veem de perto e <b>ouvem barulho</b>: armas de fogo, corrida e portas chamam atenção. Agachar e chuva ajudam a ficar furtivo.</li><li>Armas de fogo precisam de munição e recarga. Barris vermelhos explodem!</li><li>Você pode fugir: feche portas, barricade com 🔨 (martelo + tábuas + pregos) e use iscas sonoras.</li></ul>'],
+ ['🧟 Zumbis e combate','<ul><li><b>Zumbi</b> comum: lento. <b>Corredor</b>: rápido e frágil. <b>Tanque</b>: resistente e forte. <b>Gritador</b>: raro — grita e atrai a horda; carrega a chave do bunker.</li><li>Zumbis te veem de perto e <b>ouvem barulho</b>: armas de fogo, corrida e portas chamam atenção. Agachar e chuva ajudam a ficar furtivo.</li><li>Armas de fogo precisam de munição e recarga. Barris vermelhos explodem!</li><li>Você pode fugir: feche portas, barricade com 🔨 (martelo + tábuas + pregos) e use iscas sonoras.</li><li><b>Novidades:</b> 🏹 a besta é quase silenciosa (virotes se fabricam); 💣 granadas e 🔥 molotovs são arremessados à frente e explodem/queimam alguns instantes depois; 🗺️ o mapa da região revela uma grande área. O mundo agora é bem maior: tem postos de gasolina (com barris explosivos!) e celeiros.</li></ul>'],
  ['🏚 Explorar e evoluir','<ul><li>Revistar armários, geladeiras, caixas, mochilas e carros. Portas trancadas pedem <b>pé de cabra</b>. Árvores caem com <b>machado</b>.</li><li>Menu 🔨 <b>Fabricar</b>: curativos, tábuas, fogueira, baú, lança… Baús guardam itens no abrigo.</li><li>Tudo que você faz dá XP: suba atributos e habilidades no <b>Perfil</b>.</li><li>Cumpra <b>Missões</b> para ganhar recompensas. Helicópteros podem largar suprimentos — veja o mapa!</li><li>Se morrer, perde o progresso: o save é apagado.</li></ul>']
 ];
 let tpg=0;
@@ -1512,7 +1578,7 @@ function boot(){
  state='menu';refreshMenu();showMenu();
  try{const q=new URLSearchParams(location.search).get('sala');if(q)openNet(q.toUpperCase().replace(/[^A-Z]/g,'').slice(0,4))}catch(x){}
  requestAnimationFrame(frame)}
-window.__zdbg={NET,pingServer,keepAliveStart,respawn,netLeave,doHost,doJoin,get RP(){return NET.remote},get barrels(){return barrels},get fires(){return fires},get PLS(){return PLS},get P(){return P},get Z(){return Z},get TM(){return TM},get state(){return state},startNew,update,render,saveGame,loadGame,hasSave,openPanel,closePanel,doInteract,findInteract,useItem,craft,barricade,enterFS,toggleFS,lockLandscape,checkOrient,get tiles(){return tiles},get cont(){return cont},get buildings(){return buildings},get ops(){return ops},damageZ,spawnZ,hurtPlayer,addItem,countItem,computeFlow,beginGame,get ui(){return ui},get In(){return In},get settings(){return settings},get drops(){return drops},get orient(){return orientLockState},T,TS,IT};
+window.__zdbg={NET,pingServer,keepAliveStart,respawn,netLeave,doHost,doJoin,get RP(){return NET.remote},get barrels(){return barrels},get fires(){return fires},get PLS(){return PLS},get P(){return P},get Z(){return Z},get TM(){return TM},get state(){return state},startNew,update,render,saveGame,loadGame,hasSave,openPanel,closePanel,doInteract,findInteract,useItem,craft,barricade,enterFS,toggleFS,lockLandscape,checkOrient,get tiles(){return tiles},get cont(){return cont},get buildings(){return buildings},get ops(){return ops},damageZ,spawnZ,hurtPlayer,addItem,countItem,computeFlow,beginGame,get ui(){return ui},get In(){return In},get settings(){return settings},get drops(){return drops},get orient(){return orientLockState},T,TS,IT,genWorld,setBN,get MW(){return MW},get BN(){return BN},get markers(){return markers},get zspawn(){return zspawn},get startPos(){return startPos},get aux(){return aux},get under(){return under},get bmap(){return bmap},LT,RC,CK,reveal,get explored(){return explored},buildSave,applyWorld,get barrelInit(){return barrelInit}};
 boot();
 })();
 </script>
