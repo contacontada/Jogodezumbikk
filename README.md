@@ -16,17 +16,18 @@ RPG 2D de sobrevivência zumbi, visto de cima, em **um único arquivo HTML**. Fu
 7. [Construir abrigo](#7-construir-abrigo)
 8. [Árvores, lenha e replantio](#8-árvores-lenha-e-replantio)
 9. [Sobreviventes (NPCs)](#9-sobreviventes-npcs)
-10. [Fabricação](#10-fabricação)
-11. [Catálogo de itens](#11-catálogo-de-itens)
-12. [Progressão: nível, atributos e habilidades](#12-progressão)
-13. [Missões](#13-missões)
-14. [Dia, noite, clima e eventos](#14-dia-noite-clima-e-eventos)
-15. [Modo celular](#15-modo-celular)
-16. [Salvamento](#16-salvamento)
-17. [Co-op online](#17-co-op-online)
-18. [Publicar o jogo (GitHub Pages + Render)](#18-publicar-o-jogo)
-19. [Dicas de sobrevivência](#19-dicas-de-sobrevivência)
-20. [Problemas comuns](#20-problemas-comuns)
+10. [Sobrevivência avançada](#10-sobrevivência-avançada)
+11. [Fabricação](#11-fabricação)
+12. [Catálogo de itens](#12-catálogo-de-itens)
+13. [Progressão: nível, atributos e habilidades](#13-progressão)
+14. [Missões](#14-missões)
+15. [Dia, noite, clima e eventos](#15-dia-noite-clima-e-eventos)
+16. [Modo celular](#16-modo-celular)
+17. [Salvamento](#17-salvamento)
+18. [Co-op online](#18-co-op-online)
+19. [Publicar o jogo (GitHub Pages + Render)](#19-publicar-o-jogo)
+20. [Dicas de sobrevivência](#20-dicas-de-sobrevivência)
+21. [Problemas comuns](#21-problemas-comuns)
 
 ---
 
@@ -109,6 +110,7 @@ Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais cor
 | 🗡️ Facão | 29 | 50 | 0.55 | 2 | 90 | Rápido e afiado. Acerta até 2 alvos. |
 | 🔨 Marreta | 50 | 46 | 1.15 | 2 | 140 | Pesada e brutal. Empurra tudo para trás. |
 | ⚔️ Katana | 37 | 54 | 0.42 | 2 | 60 | Rara. Rápida, longa e silenciosa. |
+| 🪈 Cano de ferro | 27 | 46 | 0.6 | 2 | 120 | Pesado e barato. Bate forte. |
 
 - Dano sobe com a habilidade **Corpo a corpo** (+8% por nível) e o atributo **Força**.
 - **Machado** corta árvores; **pé de cabra** arromba portas trancadas; **martelo** barrica e desmonta construções.
@@ -122,6 +124,8 @@ Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais cor
 | 🔫 Revólver .357 | 48 | 6 | Munição .357 | 420 | 880 | Potente. Precisa de munição .357. |
 | 🔫 Submetralhadora | 19 | 30 | Munição 9mm | 300 | 800 | Rajadas rápidas com munição 9mm. Gasta muito. |
 | 🏹 Besta | 55 | 1 | Virote | 420 | 40 | Quase silenciosa. Usa virotes. |
+| 🔫 Fuzil de assalto | 34 | 30 | Munição 7.62 | 480 | 960 | Raríssimo. Rajada rápida com munição 7.62. |
+| 🔫 Espingarda de cano duplo | 17×8 | 2 | Cartucho calibre 12 | 210 | 900 | Dois tiros devastadores seguidos. |
 
 - Precisam de **munição** e **recarga** (R). A recarga automática começa quando o pente esvazia e você tem balas.
 - A **besta** é quase silenciosa — ótima para furtividade. Fabrique virotes com lenha + sucata.
@@ -141,7 +145,7 @@ Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais cor
 
 ## 5. Explorar o mundo
 
-O mapa é uma cidade grande (176×176 quadrados) com ruas, quarteirões, florestas, parques e lagos. Os locais mais importantes são marcados no mapa quando você os descobre:
+O mapa é uma cidade enorme (**248×248 quadrados**, 9×9 quarteirões; saves antigos continuam com o tamanho em que foram criados: 128 ou 176) com ruas, quarteirões, florestas, parques e lagos. Os locais mais importantes são marcados no mapa quando você os descobre:
 
 | Local | O que tem |
 | --- | --- |
@@ -153,6 +157,10 @@ O mapa é uma cidade grande (176×176 quadrados) com ruas, quarteirões, florest
 | ⛽ **Posto de gasolina** | Lanches, energéticos, combustível, mapas — e barris explosivos. |
 | 🚜 **Celeiro** | Comida, cordas, ferramentas, mudas. |
 | 🌲 **Cabanas na floresta** | Pouco saque, mas seguras. |
+| 🏫 **Escola** | Mesas de professor e armários: lanches, pilhas, fita, mochilas, mapas. Muitos zumbis. |
+| 🏭 **Armazém** | Porta trancada (pé de cabra). Estantes cheias de sucata, metal, fio, engrenagens, baterias, armadilhas e até bancadas. Barris explosivos do lado de fora. |
+| 🧪 **Laboratório** | Porta interna trancada. Químicos, álcool, antibióticos, soro, vitaminas, baterias — e um tanque à espreita. |
+| ⛪ **Igreja** | Pouco perigo: água, pão, mel, ervas, vitaminas e antibiótico ocasional. |
 | 🏚 **Bunker militar** | Trancado com a **chave do Gritador**. O melhor saque do jogo. |
 
 - **Revistar** (E): armários, geladeiras, caixotes, mochilas abandonadas, porta-malas de carros. Leva alguns segundos e faz um pouco de barulho. Depois de revistado, o recipiente pode ser reaberto livremente.
@@ -178,7 +186,7 @@ O mapa é uma cidade grande (176×176 quadrados) com ruas, quarteirões, florest
 
 ## 7. Construir abrigo
 
-Fabrique os itens de construção (veja a [tabela](#10-fabricação)): 🧱 **parede de madeira**, 🚪 **portão de madeira**, 🛏️ **cama de abrigo**, além de 🧳 **baú** e 🔥 **fogueira**.
+Fabrique os itens de construção (veja a [tabela](#11-fabricação)): 🧱 **parede de madeira**, 🚪 **portão de madeira**, 🛏️ **cama de abrigo**, além de 🧳 **baú** e 🔥 **fogueira**.
 
 ### Modo de construção (grade)
 1. No inventário, selecione o item e toque em **Posicionar (grade)**.
@@ -191,6 +199,9 @@ Fabrique os itens de construção (veja a [tabela](#10-fabricação)): 🧱 **pa
 
 ### Desmontar
 Com o **🔨 martelo equipado**, o botão **Usar** (E) aparece como **Desmontar parede/portão/cama** nas construções feitas por você, e devolve o item. Também **arranca mudas**. Construções do mapa não podem ser desmontadas.
+
+### Outros itens de construção
+O mesmo modo de grade vale para 🌾 **sementes**, 🪤 **armadilhas de urso** e 🛠️ **bancada de trabalho** (veja a seção 10). Com o martelo você desmonta bancadas e armadilhas suas.
 
 ### Barricar o abrigo
 Portas e janelas (inclusive as suas) podem ser barricadas com 🔨 / **B** (tábuas + pregos). Os zumbis não atravessam paredes construídas; eles precisam de portas abertas ou janelas quebradas.
@@ -224,7 +235,51 @@ Portas e janelas (inclusive as suas) podem ser barricadas com 🔨 / **B** (táb
 | Mecânico | Sucata, pregos, tábuas, metal, ferramentas |
 | Fazendeira | Frutas, pão, água, mudas, lenha |
 
-## 10. Fabricação
+## 10. Sobrevivência avançada
+
+### 🎣 Pesca e água
+- **Vara de pesca** (🪵 2 lenha + 🪢 corda + 🪝 anzol): com ela na mochila, chegue perto da água e use **Pescar**. Leva alguns segundos; pode vir peixe, lixo útil ou nada.
+- **Água suja**: com uma 🍾 garrafa vazia, use **Coletar água suja** perto de um lago. Beber suja pode fazer mal; **ferva** numa fogueira (receita) para virar água potável.
+- Comida **crua** (peixe, carne) pode te deixar enjoado. Cozinhe antes.
+
+### 🔥 Cozinhar
+Receitas marcadas com 🔥 só funcionam **perto de uma fogueira acesa**: peixe assado, carne assada, ferver água, carne seca e **ensopado** (a refeição mais nutritiva).
+
+### 🌾 Fazenda
+Posicione **sementes** (modo de construção) em **grama ou terra**. A planta cresce em **3 estágios (~4 minutos)**, mais rápido na chuva. Quando amadurecer, use **Colher**: rende milho, tomate ou batata e, na maioria das vezes, sementes de volta. Milho também vira sementes. Fazendas e celeiros têm sementes e comida.
+
+### 🏹 Caça (modo offline)
+Coelhos 🐇, cervos 🦌 e **javalis** 🐗 vagam pelos campos. Coelhos e cervos fogem; o **javali ataca** se for ferido. Abatidos, dão 🥩 carne, 🟫 couro e 🦴 ossos. Armas silenciosas (besta, faca) não atraem zumbis. Em co-op não há animais.
+
+### 🪤 Armadilhas de urso
+Posicione no chão (grade). Zumbi que pisa leva **muito dano e fica preso ~6 s**; ela dispara uma vez. Use **Armar/Desarmar** (Usar) para rearmar. **Você também pode pisar nelas** (dano, sangramento e preso 2,5 s) — **agache** (C) para passar por cima com segurança. Em co-op, só o anfitrião aciona armadilhas ao pisar.
+
+### 🛠️ Bancada de trabalho
+Receitas marcadas com 🛠️ exigem estar **a até 3 quadrados de uma bancada**: coletes, chapas de metal, marreta, munição caseira (9mm e cartucho 12), antibiótico e baterias.
+
+### 🛡️ Armaduras
+Uma armadura por vez (botão **Vestir armadura**; **tirar** aparece no topo do inventário). Reduz todo dano recebido:
+
+| Armadura | Redução | Observação |
+| --- | --- | --- |
+| 🧥 Jaqueta de couro | −14% | Fabricável (couro + pano + corda) |
+| 🦺 Colete improvisado | −26% | Fabricável na bancada |
+| 🛡️ Colete balístico | −40% | Melhora o colete na bancada ou acha-se em polícia/militar |
+| 🥋 Traje antimotim | −52% | Raríssimo; você anda um pouco mais devagar |
+
+### 📻 Rádio de emergência
+Com uma 🔋 bateria e **ao ar livre** (fora de prédios), use o rádio: em **~45 s** um helicóptero larga uma caixa de suprimentos perto de você (aparece no mapa). O chamado faz **barulho** e pode atrair zumbis — prepare-se.
+
+### 🪟 Quebrar vidro
+- **Golpeie uma janela** com qualquer arma ou os punhos, ou use **Quebrar janela** (E) para quebrar de uma vez.
+- Com **pano** na mão a quebra é **silenciosa**; com arma o barulho é alto; **de mão limpa sem pano** você se corta.
+- Atravessar uma janela quebrada **em pé** pode cortar você (sangramento). **Agache** (C) para passar sem se ferir.
+- Janelas barricadas não quebram até você remover as tábuas.
+
+### 🏕️ Habilidade Sobrevivência
+Sobe ao pescar, colher, caçar e cozinhar: pesca mais rápida, mais peixes, colheitas e caças maiores e menor chance de passar mal com comida crua.
+
+## 11. Fabricação
 
 Abra o menu **🔨 Fabricar** (K). As receitas aparecem em vermelho quando falta algo. Algumas exigem **martelo no inventário** e um **nível de Fabricação** mínimo.
 
@@ -252,11 +307,32 @@ Abra o menu **🔨 Fabricar** (K). As receitas aparecem em vermelho quando falta
 | 🧱 Parede de madeira ×2 | 2× 📏 Tábua, 3× 📌 Prego | 1 | 🔨 martelo |
 | 🚪 Portão de madeira | 4× 📏 Tábua, 6× 📌 Prego | 1 | 🔨 martelo |
 | 🛏️ Cama de abrigo | 4× 📏 Tábua, 6× 🧵 Pano, 4× 📌 Prego | 2 | 🔨 martelo |
+| 🍣 Peixe assado | 1× 🐟 Peixe cru | 1 |  🔥 fogueira |
+| 🍖 Carne assada | 1× 🥩 Carne crua | 1 |  🔥 fogueira |
+| 💧 Garrafa d’água | 1× 🫗 Água suja | 1 |  🔥 fogueira |
+| 🍲 Ensopado | 1× 🥩 Carne crua, 1× 🥔 Batata, 1× 🫗 Água suja | 2 |  🔥 fogueira |
+| 🥓 Carne seca ×2 | 2× 🥩 Carne crua | 2 |  🔥 fogueira |
+| 🪝 Anzol ×2 | 1× 🔩 Sucata | 1 | — |
+| 🎣 Vara de pesca | 2× 🌲 Lenha, 1× 🪢 Corda, 1× 🪝 Anzol | 2 | — |
+| 🌾 Sementes ×3 | 1× 🌽 Milho | 1 | — |
+| 🧨 Bombinhas ×2 | 1× ⚫ Pólvora, 1× 🧵 Pano | 2 | — |
+| 🪈 Cano de ferro | 1× 🔲 Chapa de metal, 1× 🧷 Fita adesiva | 2 | — |
+| 🪤 Armadilha de urso | 2× 🔲 Chapa de metal, 3× 🔩 Sucata, 4× 📌 Prego | 3 | 🔨 martelo |
+| 🛠️ Bancada de trabalho | 8× 📏 Tábua, 10× 📌 Prego, 3× 🔩 Sucata | 3 | 🔨 martelo |
+| 🧥 Jaqueta de couro | 4× 🟫 Couro, 3× 🧵 Pano, 1× 🪢 Corda | 3 | — |
+| 🦺 Colete improvisado | 6× 🧵 Pano, 2× 🔲 Chapa de metal, 2× 🧷 Fita adesiva, 2× 🪢 Corda | 4 |  🛠️ bancada |
+| 🛡️ Colete balístico | 1× 🦺 Colete improvisado, 3× 🔲 Chapa de metal, 3× 🟫 Couro, 3× 🧷 Fita adesiva | 7 |  🛠️ bancada |
+| 🔲 Chapa de metal | 5× 🔩 Sucata | 3 |  🛠️ bancada |
+| 🔨 Marreta | 3× 🔲 Chapa de metal, 2× 🌲 Lenha, 1× 🧷 Fita adesiva | 5 |  🛠️ bancada |
+| 🔸 Munição 9mm ×6 | 1× ⚫ Pólvora, 1× 🔩 Sucata | 5 |  🛠️ bancada |
+| 🟥 Cartucho calibre 12 ×3 | 1× ⚫ Pólvora, 1× 🔩 Sucata, 1× 🧵 Pano | 5 |  🛠️ bancada |
+| 💊 Antibiótico | 2× ⚗️ Produtos químicos, 1× 🧪 Álcool | 6 |  🛠️ bancada |
+| 🔋 Bateria | 2× ➰ Fio de cobre, 1× ⚗️ Produtos químicos, 1× 🔩 Sucata | 6 |  🛠️ bancada |
 
 
 Fabricar dá XP de **Fabricação**, que também acelera a construção de barricadas.
 
-## 11. Catálogo de itens
+## 12. Catálogo de itens
 
 ### Comida, bebida e remédios
 | Item | Peso | Efeito |
@@ -282,6 +358,20 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 | 💊 Analgésico | 0.05 | +22 vida |
 | 🧴 Antisséptico | 0.2 | -15 infecção, estanca sangramento |
 | 💉 Adrenalina | 0.1 | +15 vida, +60 energia |
+| 🐟 Peixe cru | 0.4 | +14 fome |
+| 🍣 Peixe assado | 0.35 | +40 fome, +4 sede |
+| 🥩 Carne crua | 0.5 | +16 fome |
+| 🍖 Carne assada | 0.45 | +52 fome, +4 energia |
+| 🌽 Milho | 0.25 | +16 fome, +3 sede |
+| 🍅 Tomate | 0.2 | +9 fome, +9 sede |
+| 🥔 Batata | 0.3 | +14 fome |
+| 🍲 Ensopado | 0.6 | +72 fome, +12 sede, +10 energia |
+| 🍯 Mel | 0.3 | +20 fome, +14 energia |
+| 🍫 Chocolate | 0.1 | +12 fome, +16 energia |
+| 🍚 Pacote de arroz | 0.5 | +26 fome |
+| 🫗 Água suja | 0.5 | +26 sede |
+| 🟡 Vitaminas | 0.05 | +30 energia, +8 vida, proteção temporária |
+| 🌿 Erva medicinal | 0.1 | +16 vida, estanca sangramento |
 
 
 ### Armas corpo a corpo
@@ -289,6 +379,15 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 
 ### Armas de fogo
 (ver tabela na seção 4)
+
+### Armaduras
+| Armadura | Peso | Redução de dano | Observação |
+| --- | --- | --- | --- |
+| 🧥 Jaqueta de couro | 1.4 | 14% | Armadura leve: -14% de dano recebido. |
+| 🦺 Colete improvisado | 3 | 26% | Armadura média: -26% de dano recebido. |
+| 🛡️ Colete balístico | 3.5 | 40% | Armadura pesada: -40% de dano recebido. |
+| 🥋 Traje antimotim | 6 | 52% | Muito raro: -52% de dano, mas você anda um pouco mais devagar. |
+
 
 ### Materiais, munição, ferramentas e utilitários
 | Item | Peso | Para que serve |
@@ -326,9 +425,22 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 | 🛏️ Cama de abrigo | 4 | Posicione e ofereça abrigo: sobreviventes podem se mudar para ela (modo offline). |
 | 🌱 Muda de árvore | 0.2 | Plante em grama, terra ou toco. Vira árvore em alguns minutos. |
 | 🗺️ Mapa da região | 0.1 | Use para revelar uma grande área do mapa ao redor. |
+| 🌾 Sementes | 0.05 | Plante em terra ou grama (modo de construção). Crescem em alguns minutos e rendem comida. |
+| 🟫 Couro | 0.4 | Material para armaduras. |
+| 🦴 Osso | 0.2 | Resto de caça. |
+| 🔋 Bateria | 0.3 | Alimenta o rádio. |
+| ➰ Fio de cobre | 0.2 | Material eletrônico. |
+| ⚗️ Produtos químicos | 0.3 | Base de remédios e explosivos. |
+| ⚙️ Engrenagem | 0.4 | Peça mecânica. |
+| 🪝 Anzol | 0.02 | Para varas de pesca. |
+| 🎣 Vara de pesca | 0.8 | Tenha na mochila e use perto da água para pescar. |
+| 📻 Rádio de emergência | 1 | Gasta 1 bateria e chama um lançamento de suprimentos no local onde você estiver. |
+| 🪤 Armadilha de urso | 2 | Posicione no chão: prende e fere quem pisar (zumbis e você!). Rearme com Usar. |
+| 🛠️ Bancada de trabalho | 6 | Fique perto dela para fabricar itens avançados. |
+| 🧨 Bombinhas | 0.2 | Joga à frente e faz um estouro enorme: atrai zumbis para lá. |
 
 
-## 12. Progressão
+## 13. Progressão
 
 Tudo que você faz dá **XP**. Ao subir de nível você ganha **2 pontos de atributo**.
 
@@ -348,8 +460,9 @@ Tudo que você faz dá **XP**. Ao subir de nível você ganha **2 pontos de atri
 | 🔨 **Fabricação** | Libera receitas e acelera construção |
 | 🏃 **Resistência física** | Mais fôlego e corrida mais veloz |
 | 🥷 **Furtividade** | −6% de ruído por nível |
+| 🏕️ **Sobrevivência** | Pesca, colheita e caça rendem mais e mais rápido; menos enjoo com comida crua |
 
-## 13. Missões
+## 14. Missões
 
 Abra com **J** (ou pelo menu). Cumprir uma missão dá XP e recompensa.
 
@@ -365,10 +478,21 @@ Abra com **J** (ou pelo menu). Cumprir uma missão dá XP e recompensa.
 | Caçada ao Gritador | Derrotar o Gritador | kit médico |
 | Segredo militar | Abrir o bunker com a chave do Gritador | soro experimental |
 | Sobrevivente | Chegar ao dia 4 | mochila militar |
+| Entrada discreta | Quebrar 3 janelas | panos e fita |
+| Pescador | Pescar 3 peixes | anzóis e corda |
+| Chef de fogueira | Cozinhar 3 receitas na fogueira | arroz e carne seca |
+| Mãos na terra | Colher 2 plantações | sementes e batatas |
+| Blindado | Vestir uma armadura | curativos e vitamina |
+| Oficina | Fabricar 2 itens na bancada | metal e engrenagens |
+| Armadilheiro | Abater 2 zumbis com armadilhas | metal e armadilha |
+| Caçador | Caçar 3 animais (offline) | armadilha e couro |
+| Sinal de socorro | Usar o rádio ao ar livre | bateria e comida |
+| Cientista maluco | Explorar o laboratório | soro experimental |
+| Veterano | Chegar ao dia 8 | colete balístico |
 
 As missões que dependem de um local mostram a direção (ex.: "ao norte").
 
-## 14. Dia, noite, clima e eventos
+## 15. Dia, noite, clima e eventos
 
 - **Um dia dura cerca de 12 minutos reais.** Dormindo, o tempo passa bem mais rápido.
 - **Noite:** a tela escurece e a visão cai. A **lanterna** ajuda; fogueiras iluminam.
@@ -376,7 +500,7 @@ As missões que dependem de um local mostram a direção (ex.: "ao norte").
 - **Eventos:** helicópteros podem largar suprimentos 🚁 (ponto dourado no mapa) e, a partir do dia 2, **hordas** podem se formar nas ruas (ponto vermelho no mapa).
 - **Dificuldade cresce:** a cada dia surgem mais corredores e tanques, e zumbis novos aparecem.
 
-## 15. Modo celular
+## 16. Modo celular
 
 - **Tela cheia real** (API de Fullscreen) e **bloqueio de orientação horizontal**; se o navegador não permitir o bloqueio, aparece o aviso para **girar o aparelho manualmente**.
 - Interface adaptada à horizontal: joystick à esquerda, botões à direita, minimapa no canto.
@@ -385,14 +509,14 @@ As missões que dependem de um local mostram a direção (ex.: "ao norte").
 - Se tela cheia ou bloqueio de orientação não estiverem disponíveis, o jogo **continua funcionando normalmente**.
 - Em **Opções** você escolhe o modo de toque (automático, ligado, desligado), vibração, auto-mira e volumes.
 
-## 16. Salvamento
+## 17. Salvamento
 
 - O jogo **salva sozinho** a cada poucos segundos e sempre que você sai, troca de app ou pausa. O save fica no **navegador** (localStorage), neste aparelho.
 - **Morreu no solo = save apagado.** Comece de novo pelo menu.
 - Saves antigos do **mapa menor** (versão anterior) continuam abrindo normalmente no mapa antigo; novos jogos usam o mapa grande.
 - Limpar os dados do navegador apaga o save.
 
-## 17. Co-op online
+## 18. Co-op online
 
 Até **4 jogadores** no mesmo mundo. O **anfitrião** roda o mundo e os zumbis no próprio navegador; os outros entram com um **código de 4 letras**.
 
@@ -409,7 +533,7 @@ Limitações:
 - Se o servidor gratuito estava dormindo, a primeira conexão pode levar cerca de **1 minuto** (o jogo avisa e espera).
 - Ao morrer no co-op você **renasce** no abrigo com um personagem novo.
 
-## 18. Publicar o jogo
+## 19. Publicar o jogo
 
 O jogo é um arquivo HTML estático e o servidor é um programa Node pequeno. Dá para separar os dois:
 
@@ -429,7 +553,7 @@ O jogo é um arquivo HTML estático e o servidor é um programa Node pequeno. D�
 
 **Manter o servidor gratuito acordado:** o plano gratuito dorme depois de ~15 min sem tráfego. O jogo envia um *ping* ao servidor ao criar/entrar numa sala e **a cada 10 minutos** enquanto você está online. A primeira conexão após um período dormindo pode demorar cerca de 1 minuto.
 
-## 19. Dicas de sobrevivência
+## 20. Dicas de sobrevivência
 
 - **Comece pelo baú do abrigo:** pegue martelo, tábuas, pregos e panos. Barricar a porta é a primeira missão e te protege.
 - **Revistar com calma:** faça isso longe de grupos de zumbis. Cada revista faz barulho.
@@ -442,9 +566,13 @@ O jogo é um arquivo HTML estático e o servidor é um programa Node pequeno. D�
 - **Construa dentro da casa ou num lote vazio**, com portão voltado para onde você vigia, e uma cama extra para atrair um sobrevivente.
 - **Barris vermelhos** são armas: puxe os zumbis até eles e atire de longe.
 - **Gritador:** mate-o longe de outros zumbis (o grito atrai todos) e pegue a **chave do bunker**.
+- **Cerque o abrigo de armadilhas** (e lembre onde estão!). Uma **fazenda** ao lado da casa, uma **vara de pesca** e uma fogueira garantem comida sem sair à rua.
+- **Pano + janela**: entre em prédios sem alarde quebrando o vidro com um pano; depois agache sobre os cacos.
+- **Bancada cedo**: coletes e munição caseira mudam o jogo. Armazéns e lojas de ferragens têm material.
+- **Ouro do laboratório**: químicos e baterias (com o rádio) valem o risco — mas leve armadura.
 - Use o **mapa** para marcar o que já revistou e para achar suprimentos largados por helicópteros.
 
-## 20. Problemas comuns
+## 21. Problemas comuns
 
 | Problema | Solução |
 | --- | --- |
