@@ -111,6 +111,11 @@ Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais cor
 | 🔨 Marreta | 50 | 46 | 1.15 | 2 | 140 | Pesada e brutal. Empurra tudo para trás. |
 | ⚔️ Katana | 37 | 54 | 0.42 | 2 | 60 | Rara. Rápida, longa e silenciosa. |
 | 🪈 Cano de ferro | 27 | 46 | 0.6 | 2 | 120 | Pesado e barato. Bate forte. |
+| 🪓 Machado de incêndio | 46 | 50 | 0.95 | 2 | 140 | Brutal. Também corta árvores. |
+| ⛏️ Picareta | 34 | 48 | 0.9 | 1 | 130 | Perfura crânios e também corta árvores. |
+| 🪏 Pá | 25 | 50 | 0.75 | 2 | 110 | Pesada e longa. Acerta até 2 alvos. |
+| 🏑 Clava de madeira | 24 | 44 | 0.62 | 2 | 105 | Tronco lapidado. Empurra bem. |
+| 🥊 Soco inglês | 15 | 28 | 0.28 | 1 | 55 | Muito rápido e discreto. |
 
 - Dano sobe com a habilidade **Corpo a corpo** (+8% por nível) e o atributo **Força**.
 - **Machado** corta árvores; **pé de cabra** arromba portas trancadas; **martelo** barrica e desmonta construções.
@@ -126,6 +131,8 @@ Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais cor
 | 🏹 Besta | 55 | 1 | Virote | 420 | 40 | Quase silenciosa. Usa virotes. |
 | 🔫 Fuzil de assalto | 34 | 30 | Munição 7.62 | 480 | 960 | Raríssimo. Rajada rápida com munição 7.62. |
 | 🔫 Espingarda de cano duplo | 17×8 | 2 | Cartucho calibre 12 | 210 | 900 | Dois tiros devastadores seguidos. |
+| 🏹 Arco | 42 | 1 | Flecha | 400 | 30 | Silencioso. Usa flechas. |
+| 🎯 Rifle de precisão | 95 | 5 | Munição 7.62 | 760 | 980 | Raríssimo. Dano enorme a longa distância. |
 
 - Precisam de **munição** e **recarga** (R). A recarga automática começa quando o pente esvazia e você tem balas.
 - A **besta** é quase silenciosa — ótima para furtividade. Fabrique virotes com lenha + sucata.
@@ -267,6 +274,11 @@ Uma armadura por vez (botão **Vestir armadura**; **tirar** aparece no topo do i
 | 🛡️ Colete balístico | −40% | Melhora o colete na bancada ou acha-se em polícia/militar |
 | 🥋 Traje antimotim | −52% | Raríssimo; você anda um pouco mais devagar |
 
+Há também um **slot de capacete** separado (⛑️ ciclista −6%, 🪖 militar −13%) que **soma** com a armadura. Os dois aparecem com o botão **tirar** no topo do inventário.
+
+### 💣 Arremessáveis
+Molotov, granada, 💥 **bomba caseira** (explosão dupla), 🧨 **bombinhas** (estouros que atraem zumbis para longe de você) e 🌫️ **bomba de fumaça** (desorienta zumbis num raio de 7 quadrados por ~5 s). Arremesse pelo inventário; todos fazem barulho ao explodir, menos a fumaça.
+
 ### 📻 Rádio de emergência
 Com uma 🔋 bateria e **ao ar livre** (fora de prédios), use o rádio: em **~45 s** um helicóptero larga uma caixa de suprimentos perto de você (aparece no mapa). O chamado faz **barulho** e pode atrair zumbis — prepare-se.
 
@@ -328,6 +340,24 @@ Abra o menu **🔨 Fabricar** (K). As receitas aparecem em vermelho quando falta
 | 🟥 Cartucho calibre 12 ×3 | 1× ⚫ Pólvora, 1× 🔩 Sucata, 1× 🧵 Pano | 5 |  🛠️ bancada |
 | 💊 Antibiótico | 2× ⚗️ Produtos químicos, 1× 🧪 Álcool | 6 |  🛠️ bancada |
 | 🔋 Bateria | 2× ➰ Fio de cobre, 1× ⚗️ Produtos químicos, 1× 🔩 Sucata | 6 |  🛠️ bancada |
+| 🍳 Omelete | 2× 🥚 Ovo | 1 |  🔥 fogueira |
+| 🥣 Sopa quente | 1× 🥫 Feijão enlatado, 1× 🫗 Água suja | 1 |  🔥 fogueira |
+| 🍵 Chá de ervas | 1× 🫗 Água suja, 1× 🌿 Erva medicinal | 2 |  🔥 fogueira |
+| 🍿 Pipoca ×2 | 1× 🌽 Milho | 1 |  🔥 fogueira |
+| 🩻 Gaze estéril ×2 | 2× 🧵 Pano, 1× 🧪 Álcool | 3 | — |
+| 🧴 Pomada cicatrizante ×2 | 2× 🌿 Erva medicinal, 1× 🧪 Álcool | 4 | — |
+| 🏑 Clava de madeira | 3× 🌲 Lenha, 3× 📌 Prego | 1 | — |
+| 🥊 Soco inglês | 1× 🔲 Chapa de metal, 1× 🧷 Fita adesiva | 3 |  🛠️ bancada |
+| 🪏 Pá | 1× 🔲 Chapa de metal, 2× 🌲 Lenha, 2× 📌 Prego | 2 | 🔨 martelo |
+| ⛏️ Picareta | 2× 🔲 Chapa de metal, 2× 🌲 Lenha, 1× 🧷 Fita adesiva | 4 |  🛠️ bancada |
+| 🪓 Machado de incêndio | 1× 🪓 Machado, 2× 🔲 Chapa de metal, 2× 🧷 Fita adesiva | 6 |  🛠️ bancada |
+| 🏹 Arco | 3× 🌲 Lenha, 2× 🪢 Corda | 3 | — |
+| ➶ Flecha ×5 | 1× 🌲 Lenha, 1× 🔩 Sucata, 1× 🧵 Pano | 2 | — |
+| ⛑️ Capacete de ciclista | 2× 🟫 Couro, 2× 🧵 Pano, 1× 🧷 Fita adesiva | 3 | — |
+| 🪖 Capacete militar | 2× 🔲 Chapa de metal, 2× 🟫 Couro, 2× 🧷 Fita adesiva | 5 |  🛠️ bancada |
+| 💥 Bomba caseira | 1× 🪈 Cano de ferro, 3× ⚫ Pólvora, 1× 🧷 Fita adesiva | 5 | — |
+| 🌫️ Bomba de fumaça | 1× ⚫ Pólvora, 1× 🧵 Pano, 1× ⚗️ Produtos químicos | 4 | — |
+| 🎒 Mochila de expedição | 1× 🎒 Mochila tática, 4× 🟫 Couro, 3× 🪢 Corda, 3× 🧷 Fita adesiva | 8 |  🛠️ bancada |
 
 
 Fabricar dá XP de **Fabricação**, que também acelera a construção de barricadas.
@@ -372,6 +402,21 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 | 🫗 Água suja | 0.5 | +26 sede |
 | 🟡 Vitaminas | 0.05 | +30 energia, +8 vida, proteção temporária |
 | 🌿 Erva medicinal | 0.1 | +16 vida, estanca sangramento |
+| 🍝 Macarrão | 0.4 | +24 fome |
+| 🐟 Sardinha enlatada | 0.2 | +20 fome, +3 energia |
+| 🥜 Pasta de amendoim | 0.4 | +26 fome, +8 energia |
+| 🌰 Castanhas | 0.15 | +12 fome, +8 energia |
+| 🍪 Biscoito | 0.1 | +10 fome, +4 energia |
+| 🌭 Salsicha em lata | 0.3 | +28 fome |
+| 🥣 Sopa quente | 0.5 | +46 fome, +14 sede, +6 energia |
+| 🥚 Ovo | 0.1 | +8 fome |
+| 🍳 Omelete | 0.3 | +38 fome, +6 energia |
+| 🍿 Pipoca | 0.15 | +18 fome, -4 sede |
+| 🥛 Leite longa vida | 0.5 | +26 sede, +10 fome |
+| 🍵 Chá de ervas | 0.3 | +30 sede, +6 vida, +8 energia |
+| 🍺 Cerveja | 0.4 | +10 sede, +6 fome, -6 energia |
+| 🩻 Gaze estéril | 0.1 | +22 vida, estanca sangramento |
+| 🧴 Pomada cicatrizante | 0.1 | +10 vida, estanca sangramento, -8 infecção |
 
 
 ### Armas corpo a corpo
@@ -438,6 +483,10 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 | 🪤 Armadilha de urso | 2 | Posicione no chão: prende e fere quem pisar (zumbis e você!). Rearme com Usar. |
 | 🛠️ Bancada de trabalho | 6 | Fique perto dela para fabricar itens avançados. |
 | 🧨 Bombinhas | 0.2 | Joga à frente e faz um estouro enorme: atrai zumbis para lá. |
+| ➶ Flecha | 0.03 | Para o arco. |
+| 💥 Bomba caseira | 0.8 | Explosão dupla muito mais forte que a granada. |
+| 🌫️ Bomba de fumaça | 0.4 | Desorienta os zumbis num raio grande por alguns segundos. |
+| 🎒 Mochila de expedição | 2 | +24 espaços, +40 kg. Rara. |
 
 
 ## 13. Progressão
