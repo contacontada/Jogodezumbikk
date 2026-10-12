@@ -116,6 +116,10 @@ Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais cor
 | 🪏 Pá | 25 | 50 | 0.75 | 2 | 110 | Pesada e longa. Acerta até 2 alvos. |
 | 🏑 Clava de madeira | 24 | 44 | 0.62 | 2 | 105 | Tronco lapidado. Empurra bem. |
 | 🥊 Soco inglês | 15 | 28 | 0.28 | 1 | 55 | Muito rápido e discreto. |
+| 🔧 Chave inglesa | 24 | 40 | 0.6 | 1 | 110 | Arma e ferramenta de mecânico. Ajuda a consertar veículos. |
+| 🔪 Cutelo | 31 | 38 | 0.5 | 1 | 85 | Pesado e cortante. |
+| 🏑 Cassetete | 19 | 42 | 0.36 | 1 | 70 | Rápido e discreto. |
+| 🪚 Motosserra | 15 | 42 | 0.12 | 3 | 430 | Raríssima. Dilacera hordas, mas é MUITO barulhenta. |
 
 - Dano sobe com a habilidade **Corpo a corpo** (+8% por nível) e o atributo **Força**.
 - **Machado** corta árvores; **pé de cabra** arromba portas trancadas; **martelo** barrica e desmonta construções.
@@ -133,6 +137,7 @@ Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais cor
 | 🔫 Espingarda de cano duplo | 17×8 | 2 | Cartucho calibre 12 | 210 | 900 | Dois tiros devastadores seguidos. |
 | 🏹 Arco | 42 | 1 | Flecha | 400 | 30 | Silencioso. Usa flechas. |
 | 🎯 Rifle de precisão | 95 | 5 | Munição 7.62 | 760 | 980 | Raríssimo. Dano enorme a longa distância. |
+| 🔫 Magnum .357 automática | 72 | 7 | Munição .357 | 460 | 930 | Raríssima. Dano enorme, estrondo enorme. |
 
 - Precisam de **munição** e **recarga** (R). A recarga automática começa quando o pente esvazia e você tem balas.
 - A **besta** é quase silenciosa — ótima para furtividade. Fabrique virotes com lenha + sucata.
@@ -152,7 +157,7 @@ Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais cor
 
 ## 5. Explorar o mundo
 
-O mapa é uma cidade enorme (**248×248 quadrados**, 9×9 quarteirões; saves antigos continuam com o tamanho em que foram criados: 128 ou 176) com ruas, quarteirões, florestas, parques e lagos. Os locais mais importantes são marcados no mapa quando você os descobre:
+O mapa é uma cidade enorme (**416×416 quadrados**, 16×16 quarteirões — mais de 2,5× a área da versão anterior; saves antigos continuam com o tamanho em que foram criados: 128, 176 ou 248) com ruas, quarteirões, florestas, parques e lagos. Os locais mais importantes são marcados no mapa quando você os descobre:
 
 | Local | O que tem |
 | --- | --- |
@@ -168,6 +173,10 @@ O mapa é uma cidade enorme (**248×248 quadrados**, 9×9 quarteirões; saves an
 | 🏭 **Armazém** | Porta trancada (pé de cabra). Estantes cheias de sucata, metal, fio, engrenagens, baterias, armadilhas e até bancadas. Barris explosivos do lado de fora. |
 | 🧪 **Laboratório** | Porta interna trancada. Químicos, álcool, antibióticos, soro, vitaminas, baterias — e um tanque à espreita. |
 | ⛪ **Igreja** | Pouco perigo: água, pão, mel, ervas, vitaminas e antibiótico ocasional. |
+| 🔧 **Oficina mecânica** | Caixas de ferramentas e estantes: galões, kits de reparo, chaves inglesas, peças. Carros estacionados na frente. |
+| 🏬 **Shopping** | Prédio enorme com muitas prateleiras (roupas, mochilas, eletrônicos, comida) e zumbis. Estacionamento com carros. |
+| 🚗 **Ferro-velho** | Pátio cercado cheio de carcaças (porta-malas revistáveis), barris explosivos e alguns carros que funcionam. |
+| 🏞️ **Lagos** | Água para **pescar** e coletar água suja; cabana na margem. |
 | 🏚 **Bunker militar** | Trancado com a **chave do Gritador**. O melhor saque do jogo. |
 
 - **Revistar** (E): armários, geladeiras, caixotes, mochilas abandonadas, porta-malas de carros. Leva alguns segundos e faz um pouco de barulho. Depois de revistado, o recipiente pode ser reaberto livremente.
@@ -288,6 +297,16 @@ Com uma 🔋 bateria e **ao ar livre** (fora de prédios), use o rádio: em **~4
 - Atravessar uma janela quebrada **em pé** pode cortar você (sangramento). **Agache** (C) para passar sem se ferir.
 - Janelas barricadas não quebram até você remover as tábuas.
 
+### 🚗 Dirigir veículos
+- **Carros** ficam estacionados nas ruas (cerca de metade de um por quarteirão), mais alguns no ferro-velho, oficina e shopping. Chegue perto e use **Entrar no veículo** (E). O mapa mostra a % de combustível ⛽ e de vida 🔧 no texto da interação.
+- **Controles:** `W/S` ou ↑/↓ acelera e freia (ré), `A/D` ou ←/→ vira, `Espaço` = freio de mão, `H` = buzina, `E` = sair. **Celular:** joystick para cima/baixo acelera/freia, esquerda/direita vira, botão de ataque = freio.
+- **Combustível:** gasta mais acelerando forte. Reabasteça com 🛢️ **galão de gasolina** (+60) ou ⛽ **combustível** (+20): use perto do carro (ou o botão **Abastecer** na interação). Sem combustível o carro para.
+- **Dano:** batidas em paredes, árvores e outros carros machucam o carro e, em alta velocidade, **você**. Com pouca vida o carro fumega; a 0 ele **explode** e você leva dano de explosão. Conserte com 🛠️ **kit de reparo** (+50) ou **3 sucatas** (+18, +10 com chave inglesa).
+- **Atropelar zumbis:** em velocidade (> ~55 px/s) o carro causa dano proporcional e arremessa zumbis; tanques desgastam o carro mais.
+- **Barulho:** o motor atrai zumbis (mais rápido = mais barulho) e a buzina atrai muitos. Dentro do carro você recebe só ~35% do dano de zumbis (o carro absorve o resto).
+- À noite os faróis iluminam bem mais. Você **não pode atacar nem construir** dirigindo.
+- **Co-op:** todos veem os carros, mas **só quem hospeda a sala dirige** por enquanto.
+
 ### 🏕️ Habilidade Sobrevivência
 Sobe ao pescar, colher, caçar e cozinhar: pesca mais rápida, mais peixes, colheitas e caças maiores e menor chance de passar mal com comida crua.
 
@@ -358,6 +377,20 @@ Abra o menu **🔨 Fabricar** (K). As receitas aparecem em vermelho quando falta
 | 💥 Bomba caseira | 1× 🪈 Cano de ferro, 3× ⚫ Pólvora, 1× 🧷 Fita adesiva | 5 | — |
 | 🌫️ Bomba de fumaça | 1× ⚫ Pólvora, 1× 🧵 Pano, 1× ⚗️ Produtos químicos | 4 | — |
 | 🎒 Mochila de expedição | 1× 🎒 Mochila tática, 4× 🟫 Couro, 3× 🪢 Corda, 3× 🧷 Fita adesiva | 8 |  🛠️ bancada |
+| 🍗 Frango assado | 1× 🍗 Frango cru | 1 |  🔥 fogueira |
+| 🍞 Pão ×2 | 2× 🌾 Farinha, 1× 🫗 Água suja | 2 |  🔥 fogueira |
+| 🔧 Chave inglesa | 1× 🔲 Chapa de metal, 2× 🔩 Sucata | 2 | — |
+| 🏑 Cassetete | 2× 🌲 Lenha, 1× 🧷 Fita adesiva | 1 | — |
+| 📯 Apito | 1× 🔲 Chapa de metal | 1 | — |
+| 🧰 Caixa de ferramentas | 6× 🔩 Sucata, 2× 🔲 Chapa de metal | 3 | — |
+| ⛽ Galão de gasolina | 2× 🔲 Chapa de metal, 3× ⛽ Combustível | 3 | — |
+| 🛠️ Kit de reparo de veículo | 1× 🧰 Caixa de ferramentas, 4× 🔩 Sucata, 2× 🧷 Fita adesiva | 4 | — |
+| 🦺 Colete de couro | 5× 🟫 Couro, 2× 🪢 Corda, 3× 🧵 Pano | 4 | — |
+| ⚔️ Armadura de placas | 6× 🔲 Chapa de metal, 2× 🟫 Couro, 3× 🧷 Fita adesiva | 7 |  🛠️ bancada |
+| 🪖 Capacete tático | 3× 🔲 Chapa de metal, 2× 🟫 Couro, 2× 🧷 Fita adesiva | 6 |  🛠️ bancada |
+| 🔪 Cutelo | 2× 🔲 Chapa de metal, 1× 🌲 Lenha, 1× 🧷 Fita adesiva | 4 |  🛠️ bancada |
+| 💧 Soro fisiológico ×2 | 1× 💧 Garrafa d’água, 1× 🧂 Sal | 3 | — |
+| 💉 Esteroide de emergência | 1× 💉 Adrenalina, 1× 💊 Analgésico, 1× ⚗️ Produtos químicos | 7 |  🛠️ bancada |
 
 
 Fabricar dá XP de **Fabricação**, que também acelera a construção de barricadas.
@@ -417,6 +450,23 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 | 🍺 Cerveja | 0.4 | +10 sede, +6 fome, -6 energia |
 | 🩻 Gaze estéril | 0.1 | +22 vida, estanca sangramento |
 | 🧴 Pomada cicatrizante | 0.1 | +10 vida, estanca sangramento, -8 infecção |
+| 🥓 Presunto fatiado | 0.3 | +22 fome |
+| 🧀 Queijo | 0.3 | +24 fome |
+| 🥣 Iogurte | 0.3 | +14 fome, +10 sede |
+| 🍓 Geleia | 0.3 | +16 fome, +10 energia |
+| 🍽️ Lasanha congelada | 0.6 | +58 fome, +6 energia |
+| 🍔 Hambúrguer | 0.35 | +44 fome |
+| 🍮 Pudim | 0.3 | +20 fome, +12 energia |
+| 🥗 Salada pronta | 0.4 | +18 fome, +12 sede |
+| 🍗 Frango cru | 0.6 | +15 fome |
+| 🍗 Frango assado | 0.5 | +56 fome, +5 energia |
+| 🥤 Refrigerante 2L | 1 | +44 sede, +14 energia |
+| 🍷 Vinho | 0.7 | +8 sede, +6 fome, -10 energia, +6 vida |
+| 🧃 Isotônico | 0.5 | +36 sede, +20 energia |
+| 🥥 Água de coco | 0.6 | +34 sede, +8 fome |
+| 💧 Soro fisiológico | 0.3 | +12 vida, -6 infecção |
+| 💊 Antiviral | 0.1 | -60 infecção, proteção temporária |
+| 💉 Esteroide de emergência | 0.1 | +35 vida, +45 energia |
 
 
 ### Armas corpo a corpo
@@ -432,6 +482,8 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 | 🦺 Colete improvisado | 3 | 26% | Armadura média: -26% de dano recebido. |
 | 🛡️ Colete balístico | 3.5 | 40% | Armadura pesada: -40% de dano recebido. |
 | 🥋 Traje antimotim | 6 | 52% | Muito raro: -52% de dano, mas você anda um pouco mais devagar. |
+| 🦺 Colete de couro | 2.2 | 20% | Armadura leve-média: −20% de dano. |
+| ⚔️ Armadura de placas | 5.5 | 36% | Placas de aço: −36% de dano, um pouco pesada. |
 
 
 ### Materiais, munição, ferramentas e utilitários
@@ -455,7 +507,6 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 | 🪢 Corda | 0.4 | Para fabricar mochilas e armas. |
 | 🧷 Fita adesiva | 0.1 | Prende e conserta de tudo. |
 | 🔲 Chapa de metal | 1 | Material pesado e resistente. |
-| ⛽ Combustível | 0.8 | Inflamável. Base de molotovs. |
 | 🍾 Garrafa vazia | 0.3 | Pode virar um molotov. |
 | ⚫ Pólvora | 0.1 | Usada em explosivos caseiros. |
 | 🔹 Munição .357 | 0.03 | Para o revólver. |
@@ -487,6 +538,10 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 | 💥 Bomba caseira | 0.8 | Explosão dupla muito mais forte que a granada. |
 | 🌫️ Bomba de fumaça | 0.4 | Desorienta os zumbis num raio grande por alguns segundos. |
 | 🎒 Mochila de expedição | 2 | +24 espaços, +40 kg. Rara. |
+| 🧂 Sal | 0.2 | Conserva e tempera. |
+| 🌾 Farinha | 0.5 | Para fazer pão na fogueira. |
+| 📯 Apito | 0.1 | Joga um som à frente e atrai zumbis para lá. |
+| 🧰 Caixa de ferramentas | 2.5 | Cheia de peças úteis. Usada em receitas avançadas. |
 
 
 ## 13. Progressão
@@ -537,6 +592,10 @@ Abra com **J** (ou pelo menu). Cumprir uma missão dá XP e recompensa.
 | Caçador | Caçar 3 animais (offline) | armadilha e couro |
 | Sinal de socorro | Usar o rádio ao ar livre | bateria e comida |
 | Cientista maluco | Explorar o laboratório | soro experimental |
+| Ao volante | Entrar num veículo | galão de gasolina |
+| Atropelador | Atropelar 8 zumbis | kit de reparo e capacete |
+| Mecânico de campo | Consertar um veículo | caixa de ferramentas e chave inglesa |
+| Dia de compras | Entrar num shopping | mochila de trilha e jaqueta |
 | Veterano | Chegar ao dia 8 | colete balístico |
 
 As missões que dependem de um local mostram a direção (ex.: "ao norte").
@@ -577,7 +636,8 @@ O que funciona no co-op: mundo, zumbis, portas, baús, loot, barricadas, **const
 
 Limitações:
 - O anfitrião precisa **manter a aba aberta e a tela ligada**; se ele sair, a sala fecha.
-- **Sem NPCs** no online.
+- **Sem NPCs** nem **animais de caça** no online.
+- Veículos aparecem para todos, mas **só o anfitrião dirige**; armadilhas só disparam para o anfitrião ao pisar.
 - Sem proteção contra trapaça (a detecção de acertos é feita em cada jogador).
 - Se o servidor gratuito estava dormindo, a primeira conexão pode levar cerca de **1 minuto** (o jogo avisa e espera).
 - Ao morrer no co-op você **renasce** no abrigo com um personagem novo.
@@ -619,6 +679,8 @@ O jogo é um arquivo HTML estático e o servidor é um programa Node pequeno. D�
 - **Pano + janela**: entre em prédios sem alarde quebrando o vidro com um pano; depois agache sobre os cacos.
 - **Bancada cedo**: coletes e munição caseira mudam o jogo. Armazéns e lojas de ferragens têm material.
 - **Ouro do laboratório**: químicos e baterias (com o rádio) valem o risco — mas leve armadura.
+- **Um carro muda tudo no mapa de 416×416:** ache um perto do início, abasteça e use as ruas retas. Leve galão extra e um kit de reparo.
+- Cuidado ao **parar o carro no meio de uma horda**: zumbis batem na lataria. Saia pelo lado livre (você desce ao lado do carro).
 - Use o **mapa** para marcar o que já revistou e para achar suprimentos largados por helicópteros.
 
 ## 21. Problemas comuns
