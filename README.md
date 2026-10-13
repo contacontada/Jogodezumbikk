@@ -120,8 +120,8 @@ Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais cor
 | 🔪 Cutelo | 31 | 38 | 0.5 | 1 | 85 | Pesado e cortante. |
 | 🏑 Cassetete | 19 | 42 | 0.36 | 1 | 70 | Rápido e discreto. |
 | 🪚 Motosserra | 15 | 42 | 0.12 | 3 | 430 | Raríssima. Dilacera hordas, mas é MUITO barulhenta. |
-| 🪛 Chave de fenda | 14 | 30 | 0.3 | 1 | 50 | Pequena, rápida e silenciosa. |
-| 🥢 Atiçador de ferro | 22 | 52 | 0.5 | 1 | 80 | Haste de ferro de lareira. |
+| 🔧 Chave de fenda | 14 | 30 | 0.3 | 1 | 50 | Pequena, rápida e silenciosa. |
+| 📏 Atiçador de ferro | 22 | 52 | 0.5 | 1 | 80 | Haste de ferro de lareira. |
 | 🏌️ Taco de golfe | 25 | 60 | 0.55 | 1 | 85 | Longo alcance e bom empurrão. |
 | 🏒 Taco de hóquei | 23 | 56 | 0.45 | 1 | 80 | Leve e rápido. |
 | 🥋 Tonfa policial | 21 | 40 | 0.32 | 1 | 60 | Rápida, controla a distância. |
@@ -426,10 +426,10 @@ Abra o menu **🔨 Fabricar** (K). As receitas aparecem em vermelho quando falta
 | 🌿 Saquinho de ervas ×2 | 2× 🌿 Erva medicinal, 1× 🧵 Pano | 1 | — |
 | 🧴 Xarope | 2× 🌿 Erva medicinal, 1× 🍯 Mel, 1× 🧪 Álcool | 3 | — |
 | 🧪 Antídoto | 1× ⚗️ Produtos químicos, 2× 🌿 Erva medicinal, 1× 💧 Soro fisiológico | 5 | — |
-| 🩼 Tala improvisada | 1× 📏 Tábua, 2× 🧵 Pano, 1× 🧷 Fita adesiva | 1 | — |
+| 🦴 Tala improvisada | 1× 📏 Tábua, 2× 🧵 Pano, 1× 🧷 Fita adesiva | 1 | — |
 | 🧰 Maleta de primeiros socorros | 1× 🧰 Kit médico, 1× 💧 Soro fisiológico, 2× 🩻 Gaze estéril | 6 | — |
-| 🥢 Atiçador de ferro | 2× 🔲 Chapa de metal, 1× 🧷 Fita adesiva | 2 | — |
-| 🪛 Chave de fenda | 1× 🔲 Chapa de metal, 1× 🧩 Plástico | 1 | — |
+| 📏 Atiçador de ferro | 2× 🔲 Chapa de metal, 1× 🧷 Fita adesiva | 2 | — |
+| 🔧 Chave de fenda | 1× 🔲 Chapa de metal, 1× 🧩 Plástico | 1 | — |
 | 🏒 Taco de hóquei | 2× 🌲 Lenha, 1× 🧷 Fita adesiva | 1 | — |
 | 🥋 Tonfa policial | 1× 📏 Tábua, 1× 🔲 Chapa de metal, 1× 🧷 Fita adesiva | 2 | — |
 | 🔱 Maça de pregos | 1× 🏑 Clava de madeira, 6× 📌 Prego, 1× 🔲 Chapa de metal | 5 |  🛠️ bancada |
@@ -550,14 +550,14 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 | 🧋 Chá gelado | 0.5 | +34 sede, +8 energia |
 | 🥛 Milkshake | 0.5 | +20 sede, +22 fome |
 | 🍸 Vodca | 0.7 | -4 sede, -12 energia, +4 vida |
-| 🫧 Água com gás | 0.5 | +40 sede |
+| 💦 Água com gás | 0.5 | +40 sede |
 | 🍵 Chá de ervas | 0.4 | +24 sede, +10 vida, -8 infecção |
 | 💊 Ibuprofeno | 0.05 | +8 vida, +12 energia |
 | 🧴 Xarope | 0.3 | +10 vida, -14 infecção |
 | 🧰 Maleta de primeiros socorros | 1.5 | +80 vida, estanca sangramento, -20 infecção |
 | 💉 Morfina | 0.1 | +45 vida, estanca sangramento, -15 energia |
 | 🧪 Antídoto | 0.1 | -40 infecção, +15 vida, proteção temporária |
-| 🩼 Tala improvisada | 0.5 | +22 vida, estanca sangramento |
+| 🦴 Tala improvisada | 0.5 | +22 vida, estanca sangramento |
 
 
 ### Armas corpo a corpo
@@ -738,7 +738,14 @@ As missões que dependem de um local mostram a direção (ex.: "ao norte").
 
 ## 18. Co-op online
 
-Até **4 jogadores** no mesmo mundo. O **anfitrião** roda o mundo e os zumbis no próprio navegador; os outros entram com um **código de 4 letras**.
+Até **8 jogadores** no mesmo mundo. O **anfitrião** roda o mundo e os zumbis no próprio navegador; os outros entram com um **código de 4 letras**.
+
+#### 🛡️ Modo sem fogo amigo (dispersão)
+Ao **criar a sala**, marque **"Modo sem fogo amigo"**. Nesse modo:
+- **Explosões lançadas por aliados não ferem você** (granada, bomba caseira, dinamite). Quem lança ainda se machuca com a própria explosão; barris e carros explodindo continuam perigosos para todos.
+- **Cada jogador nasce em um lugar diferente do mapa**, longe dos outros (dezenas de quarteirões) e sem zumbis por perto. Ao renascer você volta ao seu ponto de origem.
+- Sem a opção marcada, o co-op funciona como antes: todos nascem juntos no abrigo e as explosões ferem quem estiver perto, aliado ou não.
+- Armas de fogo e golpes corpo a corpo **nunca** ferem aliados em nenhum modo.
 
 1. Menu → **🌐 Online**.
 2. Digite seu nome. Se você abriu o jogo de outro endereço que não o do servidor (por exemplo, GitHub Pages), preencha o campo **Servidor** com o endereço do seu servidor, como `wss://seu-nome.onrender.com`.
@@ -803,7 +810,7 @@ O jogo é um arquivo HTML estático e o servidor é um programa Node pequeno. D�
 | Tela cheia não abre | Alguns navegadores bloqueiam; no iPhone use *Adicionar à Tela de Início*. O jogo funciona sem tela cheia. |
 | Aviso "gire o celular" | Gire o aparelho para horizontal; o jogo continua de onde parou. |
 | Perdi meu save | Saves ficam no navegador do aparelho; limpar dados do site ou morrer (no solo) apaga. |
-| Online: "Sala cheia" | O limite é 4 jogadores por sala. |
+| Online: "Sala cheia" | O limite é 8 jogadores por sala (configurável no servidor com `MAX_PLAYERS`, 2 a 8). |
 | Online: demora a conectar | O servidor gratuito estava dormindo. Aguarde até ~1 minuto. |
 | Online: "O anfitrião saiu" | A sala fecha quando o anfitrião sai; crie outra. |
 | Nenhum sobrevivente aparece | Só no modo offline. Você precisa de uma **cama sua** e algumas paredes/portões; camas de casas do mapa não contam. |
