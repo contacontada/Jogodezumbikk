@@ -172,7 +172,7 @@ Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais cor
 
 ## 5. Explorar o mundo
 
-O mapa é uma cidade enorme (**416×416 quadrados**, 16×16 quarteirões — mais de 2,5× a área da versão anterior; saves antigos continuam com o tamanho em que foram criados: 128, 176 ou 248) com ruas, quarteirões, florestas, parques e lagos. Os locais mais importantes são marcados no mapa quando você os descobre:
+O mapa é uma cidade enorme (**608×608 quadrados**, 24×24 quarteirões — mais de 2,1× a área da versão anterior; saves antigos continuam com o tamanho em que foram criados: 128, 176, 248 ou 416) com ruas, quarteirões, florestas, parques e lagos. Os locais mais importantes são marcados no mapa quando você os descobre:
 
 | Local | O que tem |
 | --- | --- |
@@ -196,6 +196,7 @@ O mapa é uma cidade enorme (**416×416 quadrados**, 16×16 quarteirões — mai
 
 - **Revistar** (E): armários, geladeiras, caixotes, mochilas abandonadas, porta-malas de carros. Leva alguns segundos e faz um pouco de barulho. Depois de revistado, o recipiente pode ser reaberto livremente.
 - 🚁 **Helicópteros** podem largar caixas de suprimentos (aparecem no mapa como pontos dourados).
+- 🔍 **Zoom no mapa:** roda do mouse, pinça (celular) ou os botões **Zoom ＋/－**; arraste para mover, **⌖ Eu** centraliza em você e **Mapa todo** volta à visão geral. Até 24×. Veículos já vistos aparecem como quadradinhos coloridos.
 - 🗺️ O **mapa** só mostra o que você já explorou. O item **Mapa da região** revela uma grande área de uma vez.
 
 ## 6. Inventário, peso e mochilas
@@ -320,7 +321,7 @@ Com uma 🔋 bateria e **ao ar livre** (fora de prédios), use o rádio: em **~4
 - **Atropelar zumbis:** em velocidade (> ~55 px/s) o carro causa dano proporcional e arremessa zumbis; tanques desgastam o carro mais.
 - **Barulho:** o motor atrai zumbis (mais rápido = mais barulho) e a buzina atrai muitos. Dentro do carro você recebe só ~35% do dano de zumbis (o carro absorve o resto).
 - À noite os faróis iluminam bem mais. Você **não pode atacar nem construir** dirigindo.
-- **Co-op:** todos veem os carros, mas **só quem hospeda a sala dirige** por enquanto.
+- **Co-op:** todos veem os carros. Cada carro tem **4 lugares: 1 motorista e 3 passageiros**. Quem chega primeiro vira motorista; os outros usam **Entrar como passageiro**. Se o motorista sai, um passageiro assume o volante. Convidados também podem dirigir (o anfitrião calcula a física). Passageiros veem as barras de combustível/vida e saem com E. Só dá para entrar com o carro devagar. Combustível e conserto funcionam para todos.
 
 ### 🧱 Quebrar paredes
 - **Derrube qualquer parede** (de casas, lojas, prédios e as que você construiu) para abrir atalhos ou fugir. Só o **bunker militar** e a borda do mapa são indestrutíveis.
@@ -748,7 +749,7 @@ O que funciona no co-op: mundo, zumbis, portas, baús, loot, barricadas, **const
 Limitações:
 - O anfitrião precisa **manter a aba aberta e a tela ligada**; se ele sair, a sala fecha.
 - **Sem NPCs** nem **animais de caça** no online.
-- Veículos aparecem para todos, mas **só o anfitrião dirige**; armadilhas só disparam para o anfitrião ao pisar.
+- Veículos: motorista + 3 passageiros, para anfitrião e convidados (a direção do convidado tem um pequeno atraso da rede). Armadilhas só disparam para o anfitrião ao pisar.
 - Sem proteção contra trapaça (a detecção de acertos é feita em cada jogador).
 - Se o servidor gratuito estava dormindo, a primeira conexão pode levar cerca de **1 minuto** (o jogo avisa e espera).
 - Ao morrer no co-op você **renasce** no abrigo com um personagem novo.
@@ -790,7 +791,7 @@ O jogo é um arquivo HTML estático e o servidor é um programa Node pequeno. D�
 - **Pano + janela**: entre em prédios sem alarde quebrando o vidro com um pano; depois agache sobre os cacos.
 - **Bancada cedo**: coletes e munição caseira mudam o jogo. Armazéns e lojas de ferragens têm material.
 - **Ouro do laboratório**: químicos e baterias (com o rádio) valem o risco — mas leve armadura.
-- **Um carro muda tudo no mapa de 416×416:** ache um perto do início, abasteça e use as ruas retas. Leve galão extra e um kit de reparo.
+- **Um carro muda tudo no mapa de 608×608:** ache um perto do início, abasteça e use as ruas retas. Leve galão extra e um kit de reparo.
 - Cuidado ao **parar o carro no meio de uma horda**: zumbis batem na lataria. Saia pelo lado livre (você desce ao lado do carro).
 - Use o **mapa** para marcar o que já revistou e para achar suprimentos largados por helicópteros.
 
