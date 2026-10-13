@@ -120,6 +120,15 @@ Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais cor
 | 🔪 Cutelo | 31 | 38 | 0.5 | 1 | 85 | Pesado e cortante. |
 | 🏑 Cassetete | 19 | 42 | 0.36 | 1 | 70 | Rápido e discreto. |
 | 🪚 Motosserra | 15 | 42 | 0.12 | 3 | 430 | Raríssima. Dilacera hordas, mas é MUITO barulhenta. |
+| 🪛 Chave de fenda | 14 | 30 | 0.3 | 1 | 50 | Pequena, rápida e silenciosa. |
+| 🥢 Atiçador de ferro | 22 | 52 | 0.5 | 1 | 80 | Haste de ferro de lareira. |
+| 🏌️ Taco de golfe | 25 | 60 | 0.55 | 1 | 85 | Longo alcance e bom empurrão. |
+| 🏒 Taco de hóquei | 23 | 56 | 0.45 | 1 | 80 | Leve e rápido. |
+| 🥋 Tonfa policial | 21 | 40 | 0.32 | 1 | 60 | Rápida, controla a distância. |
+| 🗡️ Sabre | 33 | 56 | 0.4 | 2 | 55 | Rara. Corte limpo e silencioso. |
+| 🔨 Martelo de guerra | 54 | 44 | 0.95 | 2 | 130 | Lento, mas esmaga qualquer coisa. |
+| 🌾 Foice | 36 | 62 | 0.7 | 3 | 75 | Corta vários zumbis num arco largo. |
+| 🔱 Maça de pregos | 40 | 44 | 0.75 | 2 | 110 | Bola de aço com pontas. |
 
 - Dano sobe com a habilidade **Corpo a corpo** (+8% por nível) e o atributo **Força**.
 - **Machado** corta árvores; **pé de cabra** arromba portas trancadas; **martelo** barrica e desmonta construções.
@@ -138,6 +147,12 @@ Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais cor
 | 🏹 Arco | 42 | 1 | Flecha | 400 | 30 | Silencioso. Usa flechas. |
 | 🎯 Rifle de precisão | 95 | 5 | Munição 7.62 | 760 | 980 | Raríssimo. Dano enorme a longa distância. |
 | 🔫 Magnum .357 automática | 72 | 7 | Munição .357 | 460 | 930 | Raríssima. Dano enorme, estrondo enorme. |
+| 🔫 Pistola compacta | 27 | 17 | Munição 9mm | 360 | 690 | Carregador grande. Munição 9mm. |
+| 🔫 Mini submetralhadora | 16 | 32 | Munição 9mm | 260 | 780 | Cadência altíssima e pouca precisão. |
+| 🔫 Rifle de alavanca | 52 | 8 | Munição .357 | 500 | 900 | Clássico e preciso. Usa munição .357. |
+| 🔫 Espingarda de cano serrado | 14×9 | 2 | Cartucho calibre 12 | 150 | 930 | Curto alcance, dano brutal e muito barulho. |
+| 🔫 Carabina | 40 | 15 | Munição 7.62 | 520 | 940 | Meio-termo entre o fuzil e o rifle. Munição 7.62. |
+| 🏹 Arco composto | 58 | 1 | Flecha | 480 | 30 | Silencioso, potente e preciso. Usa flechas. |
 
 - Precisam de **munição** e **recarga** (R). A recarga automática começa quando o pente esvazia e você tem balas.
 - A **besta** é quase silenciosa — ótima para furtividade. Fabrique virotes com lenha + sucata.
@@ -307,6 +322,14 @@ Com uma 🔋 bateria e **ao ar livre** (fora de prédios), use o rádio: em **~4
 - À noite os faróis iluminam bem mais. Você **não pode atacar nem construir** dirigindo.
 - **Co-op:** todos veem os carros, mas **só quem hospeda a sala dirige** por enquanto.
 
+### 🧱 Quebrar paredes
+- **Derrube qualquer parede** (de casas, lojas, prédios e as que você construiu) para abrir atalhos ou fugir. Só o **bunker militar** e a borda do mapa são indestrutíveis.
+- **Como:** equipe uma ferramenta pesada e use **Derrubar parede** (E) perto dela, ou simplesmente **golpeie** a parede. Cada golpe mostra rachaduras e a % de dano. Quebrada, a parede some, vira piso e solta 🔩 sucata (e às vezes tábuas/metal; as suas soltam tábuas e pregos).
+- **Eficácia por arma:** 🔨 marreta e ⛏️ picareta (3–4 golpes), 🪓 machados, 🪚 motosserra (rapidíssima, barulhenta); 🔧 pé de cabra e cano funcionam devagar; tacos, facas e punhos quase não adiantam. Armas de fogo não afetam paredes.
+- **Explosões** (granada, bomba caseira, barril vermelho) também danificam paredes num raio de ~3 quadrados.
+- **Barulho alto** a cada golpe: os zumbis ouvem. Paredes (as suas também) valem pontos de abrigo: se você demolir sua parede, o abrigo perde proteção.
+- Em co-op, o anfitrião valida os golpes dos outros jogadores.
+
 ### 🏕️ Habilidade Sobrevivência
 Sobe ao pescar, colher, caçar e cozinhar: pesca mais rápida, mais peixes, colheitas e caças maiores e menor chance de passar mal com comida crua.
 
@@ -391,6 +414,46 @@ Abra o menu **🔨 Fabricar** (K). As receitas aparecem em vermelho quando falta
 | 🔪 Cutelo | 2× 🔲 Chapa de metal, 1× 🌲 Lenha, 1× 🧷 Fita adesiva | 4 |  🛠️ bancada |
 | 💧 Soro fisiológico ×2 | 1× 💧 Garrafa d’água, 1× 🧂 Sal | 3 | — |
 | 💉 Esteroide de emergência | 1× 💉 Adrenalina, 1× 💊 Analgésico, 1× ⚗️ Produtos químicos | 7 |  🛠️ bancada |
+| 🍜 Miojo pronto | 1× 🍜 Macarrão instantâneo, 1× 🫗 Água suja | 1 |  🔥 fogueira |
+| 🥓 Bacon frito | 1× 🥓 Bacon cru | 1 |  🔥 fogueira |
+| 🥩 Bife grelhado | 1× 🥩 Bife cru, 1× 🧂 Sal | 2 |  🔥 fogueira |
+| 🥧 Torta de maçã | 2× 🍎 Maçã, 1× 🌾 Farinha, 1× 🍯 Mel | 3 |  🔥 fogueira |
+| 🥪 Sanduíche | 1× 🍞 Pão, 1× 🧀 Queijo, 1× 🥓 Presunto fatiado | 1 | — |
+| 🌭 Cachorro-quente | 1× 🍞 Pão, 1× 🌭 Salsicha em lata | 1 | — |
+| 🍋 Limonada | 2× 🍋 Limão, 1× 🫗 Água suja, 1× 🍯 Mel | 1 | — |
+| 🍵 Chá de ervas | 1× 🌿 Saquinho de ervas, 1× 🫗 Água suja | 1 |  🔥 fogueira |
+| 🌿 Saquinho de ervas ×2 | 2× 🌿 Erva medicinal, 1× 🧵 Pano | 1 | — |
+| 🧴 Xarope | 2× 🌿 Erva medicinal, 1× 🍯 Mel, 1× 🧪 Álcool | 3 | — |
+| 🧪 Antídoto | 1× ⚗️ Produtos químicos, 2× 🌿 Erva medicinal, 1× 💧 Soro fisiológico | 5 | — |
+| 🩼 Tala improvisada | 1× 📏 Tábua, 2× 🧵 Pano, 1× 🧷 Fita adesiva | 1 | — |
+| 🧰 Maleta de primeiros socorros | 1× 🧰 Kit médico, 1× 💧 Soro fisiológico, 2× 🩻 Gaze estéril | 6 | — |
+| 🥢 Atiçador de ferro | 2× 🔲 Chapa de metal, 1× 🧷 Fita adesiva | 2 | — |
+| 🪛 Chave de fenda | 1× 🔲 Chapa de metal, 1× 🧩 Plástico | 1 | — |
+| 🏒 Taco de hóquei | 2× 🌲 Lenha, 1× 🧷 Fita adesiva | 1 | — |
+| 🥋 Tonfa policial | 1× 📏 Tábua, 1× 🔲 Chapa de metal, 1× 🧷 Fita adesiva | 2 | — |
+| 🔱 Maça de pregos | 1× 🏑 Clava de madeira, 6× 📌 Prego, 1× 🔲 Chapa de metal | 5 |  🛠️ bancada |
+| 🔨 Martelo de guerra | 1× 🧱 Barra de aço, 2× 🌲 Lenha, 2× 🧷 Fita adesiva | 7 |  🛠️ bancada |
+| 🌾 Foice | 3× 🔲 Chapa de metal, 2× 🌲 Lenha, 1× 🪢 Corda | 5 |  🛠️ bancada |
+| 🗡️ Sabre | 1× 🧱 Barra de aço, 1× 🟫 Couro, 1× 🧷 Fita adesiva | 7 |  🛠️ bancada |
+| 🔫 Espingarda de cano serrado | 1× 🔫 Espingarda de cano duplo, 1× 🧷 Fita adesiva, 1× 🔲 Chapa de metal | 6 |  🛠️ bancada |
+| 🏹 Arco composto | 1× 🏹 Arco, 2× 🌀 Mola, 3× ➰ Fio de cobre, 1× 🧩 Plástico | 7 |  🛠️ bancada |
+| 🔫 Mini submetralhadora | 1× 🔫 Submetralhadora, 2× 🌀 Mola, 1× 🧱 Barra de aço | 8 |  🛠️ bancada |
+| ✨ Granada de luz | 1× 🔋 Bateria, 1× ⚫ Pólvora, 1× 🧩 Plástico | 4 |  🛠️ bancada |
+| 🧨 Dinamite | 2× ⚫ Pólvora, 1× 🪢 Corda, 1× 🟡 Enxofre | 5 |  🛠️ bancada |
+| ☄️ Bomba incendiária | 2× ⛽ Combustível, 1× 🧴 Cola forte, 1× 🍾 Garrafa vazia | 4 | — |
+| 🧥 Moletom grosso | 3× 🧵 Tecido grosso, 2× 🧵 Pano | 2 | — |
+| 🧥 Jaqueta de motoqueiro | 4× 🟫 Couro, 2× ⚫ Borracha, 2× 🧷 Fita adesiva | 5 | — |
+| 🦺 Colete tático | 4× 🧵 Tecido grosso, 3× 🧩 Plástico, 1× 🧱 Barra de aço | 7 |  🛠️ bancada |
+| 👷 Capacete de obra | 3× 🧩 Plástico, 1× 🧴 Cola forte | 2 | — |
+| 🥽 Máscara de soldador | 1× 🔲 Chapa de metal, 1× 🧩 Plástico, 1× 🧴 Cola forte | 3 | — |
+| 👝 Pochete | 1× 🧵 Tecido grosso, 1× 🪢 Corda | 1 | — |
+| 👜 Mala esportiva | 4× 🧵 Tecido grosso, 2× 🪢 Corda, 1× 🧷 Fita adesiva | 3 | — |
+| 🧴 Cola forte | 2× 🦴 Osso, 1× 💧 Garrafa d’água | 2 |  🔥 fogueira |
+| 🌀 Mola ×2 | 2× ➰ Fio de cobre | 2 | — |
+| 🟡 Enxofre | 1× ⚗️ Produtos químicos, 1× 🧂 Sal | 3 | — |
+| 🧩 Plástico ×2 | 1× 🍾 Garrafa vazia | 1 | — |
+| 🧱 Barra de aço | 3× 🔲 Chapa de metal, 2× 🔩 Sucata | 5 |  🛠️ bancada |
+| 💾 Placa eletrônica | 1× 📻 Rádio de emergência | 3 | — |
 
 
 Fabricar dá XP de **Fabricação**, que também acelera a construção de barricadas.
@@ -467,6 +530,33 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 | 💧 Soro fisiológico | 0.3 | +12 vida, -6 infecção |
 | 💊 Antiviral | 0.1 | -60 infecção, proteção temporária |
 | 💉 Esteroide de emergência | 0.1 | +35 vida, +45 energia |
+| 🍕 Pizza congelada | 0.7 | +46 fome, +4 energia |
+| 🥪 Sanduíche | 0.35 | +34 fome |
+| 🌭 Cachorro-quente | 0.3 | +30 fome |
+| 🍩 Rosquinha | 0.15 | +16 fome, +10 energia |
+| 🍰 Fatia de bolo | 0.3 | +26 fome, +14 energia |
+| 🍦 Sorvete | 0.3 | +12 fome, +8 sede, +8 energia |
+| 🍌 Banana | 0.2 | +14 fome, +6 energia |
+| 🍊 Laranja | 0.25 | +10 fome, +10 sede, +2 vida |
+| 🍇 Uvas | 0.25 | +10 fome, +8 sede |
+| 🍜 Miojo pronto | 0.5 | +42 fome, +6 sede |
+| 🥓 Bacon cru | 0.3 | +10 fome |
+| 🥓 Bacon frito | 0.25 | +34 fome, +4 energia |
+| 🥩 Bife cru | 0.6 | +14 fome |
+| 🥩 Bife grelhado | 0.5 | +62 fome, +8 energia |
+| 🥧 Torta de maçã | 0.6 | +40 fome, +10 energia |
+| 🍋 Limonada | 0.5 | +38 sede, +6 energia |
+| 🧋 Chá gelado | 0.5 | +34 sede, +8 energia |
+| 🥛 Milkshake | 0.5 | +20 sede, +22 fome |
+| 🍸 Vodca | 0.7 | -4 sede, -12 energia, +4 vida |
+| 🫧 Água com gás | 0.5 | +40 sede |
+| 🍵 Chá de ervas | 0.4 | +24 sede, +10 vida, -8 infecção |
+| 💊 Ibuprofeno | 0.05 | +8 vida, +12 energia |
+| 🧴 Xarope | 0.3 | +10 vida, -14 infecção |
+| 🧰 Maleta de primeiros socorros | 1.5 | +80 vida, estanca sangramento, -20 infecção |
+| 💉 Morfina | 0.1 | +45 vida, estanca sangramento, -15 energia |
+| 🧪 Antídoto | 0.1 | -40 infecção, +15 vida, proteção temporária |
+| 🩼 Tala improvisada | 0.5 | +22 vida, estanca sangramento |
 
 
 ### Armas corpo a corpo
@@ -484,6 +574,9 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 | 🥋 Traje antimotim | 6 | 52% | Muito raro: -52% de dano, mas você anda um pouco mais devagar. |
 | 🦺 Colete de couro | 2.2 | 20% | Armadura leve-média: −20% de dano. |
 | ⚔️ Armadura de placas | 5.5 | 36% | Placas de aço: −36% de dano, um pouco pesada. |
+| 🧥 Moletom grosso | 1 | 9% | Aquece e protege um pouco: −9% de dano. |
+| 🧥 Jaqueta de motoqueiro | 2.8 | 27% | Couro com proteções: −27% de dano. |
+| 🦺 Colete tático | 3.8 | 40% | Muito resistente: −40% de dano. |
 
 
 ### Materiais, munição, ferramentas e utilitários
@@ -542,6 +635,23 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 | 🌾 Farinha | 0.5 | Para fazer pão na fogueira. |
 | 📯 Apito | 0.1 | Joga um som à frente e atrai zumbis para lá. |
 | 🧰 Caixa de ferramentas | 2.5 | Cheia de peças úteis. Usada em receitas avançadas. |
+| 🍜 Macarrão instantâneo | 0.2 | Cozinhe numa fogueira com água. |
+| ✨ Granada de luz | 0.4 | Atordoa zumbis num raio grande por um bom tempo. Faz barulho. |
+| 🧨 Dinamite | 0.6 | Três explosões seguidas. Perigosíssima. |
+| ☄️ Bomba incendiária | 0.8 | Espalha um grande mar de fogo. |
+| 👝 Pochete | 0.3 | +3 espaços, +4 kg. |
+| 👜 Mala esportiva | 1.8 | +14 espaços, +22 kg. |
+| 🧴 Cola forte | 0.2 | Para reforçar peças e armas. |
+| 🌀 Mola | 0.1 | Peça de mecanismo. |
+| ⚫ Borracha | 0.4 | Pedaços de pneu e mangueira. |
+| 🧩 Plástico | 0.2 | Reciclável e leve. |
+| 🟡 Enxofre | 0.3 | Para pólvora e bombas. |
+| 🧲 Ímã | 0.2 | Útil em eletrônicos. |
+| 💾 Placa eletrônica | 0.2 | Para rádios e aparelhos. |
+| 🧱 Barra de aço | 1.5 | Base de armas e armaduras pesadas. |
+| 🧵 Tecido grosso | 0.3 | Lona e brim resistentes. |
+| 🌿 Saquinho de ervas | 0.2 | Para chás e remédios caseiros. |
+| 🍋 Limão | 0.15 | Para limonada ou cozinhar. |
 
 
 ## 13. Progressão
@@ -592,6 +702,7 @@ Abra com **J** (ou pelo menu). Cumprir uma missão dá XP e recompensa.
 | Caçador | Caçar 3 animais (offline) | armadilha e couro |
 | Sinal de socorro | Usar o rádio ao ar livre | bateria e comida |
 | Cientista maluco | Explorar o laboratório | soro experimental |
+| Demolidor | Derrubar 3 paredes | metal e fita |
 | Ao volante | Entrar num veículo | galão de gasolina |
 | Atropelador | Atropelar 8 zumbis | kit de reparo e capacete |
 | Mecânico de campo | Consertar um veículo | caixa de ferramentas e chave inglesa |
