@@ -129,6 +129,13 @@ Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais cor
 | 🔨 Martelo de guerra | 54 | 44 | 0.95 | 2 | 130 | Lento, mas esmaga qualquer coisa. |
 | 🌾 Foice | 36 | 62 | 0.7 | 3 | 75 | Corta vários zumbis num arco largo. |
 | 🔱 Maça de pregos | 40 | 44 | 0.75 | 2 | 110 | Bola de aço com pontas. |
+| 🔱 Forcado | 29 | 62 | 0.62 | 2 | 85 | Dois dentes e bom alcance. |
+| 📏 Vergalhão | 26 | 50 | 0.55 | 1 | 95 | Barra de aço dobrada. |
+| 🪓 Machadinha | 30 | 40 | 0.42 | 1 | 70 | Leve e afiada. Ótima para golpes furtivos. |
+| 🔪 Faca de caco | 15 | 28 | 0.3 | 1 | 35 | Improvisada. Silenciosa; mata furtivo. |
+| 🦯 Bengala de ferro | 21 | 52 | 0.45 | 1 | 75 | Surpreendentemente útil. |
+| 🥋 Nunchaku | 24 | 44 | 0.3 | 2 | 70 | Rápido e imprevisível. |
+| 🗡️ Baioneta | 26 | 38 | 0.34 | 1 | 45 | Lâmina militar. Furtiva. |
 
 - Dano sobe com a habilidade **Corpo a corpo** (+8% por nível) e o atributo **Força**.
 - **Machado** corta árvores; **pé de cabra** arromba portas trancadas; **martelo** barrica e desmonta construções.
@@ -153,6 +160,10 @@ Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais cor
 | 🔫 Espingarda de cano serrado | 14×9 | 2 | Cartucho calibre 12 | 150 | 930 | Curto alcance, dano brutal e muito barulho. |
 | 🔫 Carabina | 40 | 15 | Munição 7.62 | 520 | 940 | Meio-termo entre o fuzil e o rifle. Munição 7.62. |
 | 🏹 Arco composto | 58 | 1 | Flecha | 480 | 30 | Silencioso, potente e preciso. Usa flechas. |
+| 🔫 Submetralhadora MP5 | 22 | 30 | Munição 9mm | 340 | 780 | Mais precisa que a SMG comum. |
+| 🔫 Pistola pesada | 36 | 8 | Munição 9mm | 370 | 760 | Pouca munição, mas bate forte. 9mm. |
+| 🔫 Rifle de caça | 70 | 5 | Munição 7.62 | 620 | 900 | Ferrolho: lento e muito preciso. 7.62. |
+| 🔧 Pistola de pregos | 20 | 24 | Prego | 200 | 120 | Usa pregos como munição. Bem silenciosa. |
 
 - Precisam de **munição** e **recarga** (R). A recarga automática começa quando o pente esvazia e você tem balas.
 - A **besta** é quase silenciosa — ótima para furtividade. Fabrique virotes com lenha + sucata.
@@ -172,7 +183,7 @@ Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais cor
 
 ## 5. Explorar o mundo
 
-O mapa é uma cidade enorme (**608×608 quadrados**, 24×24 quarteirões — mais de 2,1× a área da versão anterior; saves antigos continuam com o tamanho em que foram criados: 128, 176, 248 ou 416) com ruas, quarteirões, florestas, parques e lagos. Os locais mais importantes são marcados no mapa quando você os descobre:
+O mapa é uma cidade enorme (**992×992 quadrados**, 40×40 quarteirões — cerca de 2,7× a área da versão anterior e mais de 60× a primeira; saves antigos continuam com o tamanho em que foram criados: 128, 176, 248, 416 ou 608) com ruas, quarteirões, florestas, parques e lagos. Os locais mais importantes são marcados no mapa quando você os descobre:
 
 | Local | O que tem |
 | --- | --- |
@@ -314,6 +325,11 @@ Com uma 🔋 bateria e **ao ar livre** (fora de prédios), use o rádio: em **~4
 - Janelas barricadas não quebram até você remover as tábuas.
 
 ### 🚗 Dirigir veículos
+- **Três tipos de veículo** (aparecem espalhados pelo mapa):
+  - 🚗 **Carro:** equilibrado, 4 lugares.
+  - 🏍️ **Moto:** a mais rápida e ágil (até ~390), gasta pouco combustível, mas é **frágil** (bate e quebra fácil) e o piloto se machuca mais nas batidas. Só 2 lugares (piloto + garupa).
+  - 🚚 **Caminhão:** lento e pesado (~235), **muito resistente** (leva só ~55% do dano), atropela com mais força e gasta mais combustível. 4 lugares (2 na cabine, 2 na caçamba).
+- **Serviços no veículo:** com o **agachado (C)** perto do veículo, a interação passa a oferecer **Abastecer**, **Consertar** e **Sifonar combustível** (em vez de Entrar). Sifonar precisa de uma **mangueira** e rende 1 ⛽ combustível por vez (−20% do tanque).
 - **Carros** ficam estacionados nas ruas (cerca de metade de um por quarteirão), mais alguns no ferro-velho, oficina e shopping. Chegue perto e use **Entrar no veículo** (E). O mapa mostra a % de combustível ⛽ e de vida 🔧 no texto da interação.
 - **Controles:** `W/S` ou ↑/↓ acelera e freia (ré), `A/D` ou ←/→ vira, `Espaço` = freio de mão, `H` = buzina, `E` = sair. **Celular:** joystick para cima/baixo acelera/freia, esquerda/direita vira, botão de ataque = freio.
 - **Combustível:** gasta mais acelerando forte. Reabasteça com 🛢️ **galão de gasolina** (+60) ou ⛽ **combustível** (+20): use perto do carro (ou o botão **Abastecer** na interação). Sem combustível o carro para.
@@ -330,6 +346,28 @@ Com uma 🔋 bateria e **ao ar livre** (fora de prédios), use o rádio: em **~4
 - **Explosões** (granada, bomba caseira, barril vermelho) também danificam paredes num raio de ~3 quadrados.
 - **Barulho alto** a cada golpe: os zumbis ouvem. Paredes (as suas também) valem pontos de abrigo: se você demolir sua parede, o abrigo perde proteção.
 - Em co-op, o anfitrião valida os golpes dos outros jogadores.
+
+### 🗝️ Arrombar portas com gazua
+- Portas trancadas das casas pedem pé de cabra (barulhento, 3 s). Com uma **gazua** (🗝️) na mochila, a interação vira **Arrombar tranca**: leva ~2–4 s, é **quase silenciosa** e a chance de sucesso sobe com a habilidade **Garimpo** (de 56% até 95%). Falhar pode **quebrar a gazua (30%)**.
+- Se você tiver pé de cabra **e** gazua, a gazua é usada quando você está **agachado**; em pé usa o pé de cabra.
+- Fabrique: 📎 **grampos** (de arame) → **gazua** (3 grampos + metal).
+
+### 🗡️ Golpe furtivo
+- **Agachado**, chegue **por trás** de um zumbi que ainda **não te percebeu** e ataque com lâmina (faca, faca de caco, machete, katana, cutelo, chave de fenda, sabre, machadinha, baioneta; machado também funciona, mais fraco). O golpe causa dano multiplicado e **mata na hora** (menos Tanques, que levam um dano enorme). Treina **Furtividade**.
+
+### 🧤 Equipamento de proteção
+- 🧤 **Luvas** (na mochila): quebrar vidro ou pisar em cacos **não corta sua mão**.
+- 🥾 **Botas reforçadas** (na mochila): menos de um terço da chance de se cortar em cacos e **metade do dano** de armadilha de urso.
+- 🥼 **Traje de proteção**: reduz 28% do dano e deixa a **infecção 70% mais difícil**.
+- 😷 **Máscara de gás**, 🧢 gorro, 🪖 capacete com viseira e outros novos capacetes/armaduras entram nos mesmos espaços de equipamento.
+- 🔭 **Binóculos** e 🪢 **mangueira** são itens de uso passivo (mantenha na mochila).
+
+### 💨 Gases e bombas de som
+- 💨 **Gás lacrimogêneo:** nuvem por ~10 s num raio médio que **atordoa e fere** os zumbis.
+- 🤢 **Bomba de fedor:** gera barulho enorme por vários segundos e **atrai** zumbis para longe de você — jogue longe e saia pelo outro lado.
+
+### 🔧 Pistola de pregos
+- Usa **pregos** como munição (24 por carregador), é **quase silenciosa** e tem bom dano para o barulho. Fabricada na bancada.
 
 ### 🏕️ Habilidade Sobrevivência
 Sobe ao pescar, colher, caçar e cozinhar: pesca mais rápida, mais peixes, colheitas e caças maiores e menor chance de passar mal com comida crua.
@@ -455,6 +493,47 @@ Abra o menu **🔨 Fabricar** (K). As receitas aparecem em vermelho quando falta
 | 🧩 Plástico ×2 | 1× 🍾 Garrafa vazia | 1 | — |
 | 🧱 Barra de aço | 3× 🔲 Chapa de metal, 2× 🔩 Sucata | 5 |  🛠️ bancada |
 | 💾 Placa eletrônica | 1× 📻 Rádio de emergência | 3 | — |
+| 🍄 Cogumelo assado | 1× 🍄 Cogumelo cru | 1 |  🔥 fogueira |
+| 🌮 Taco | 1× 🌾 Farinha, 1× 🥩 Carne crua, 1× 🍅 Tomate | 2 |  🔥 fogueira |
+| 🌯 Burrito | 1× 🌾 Farinha, 1× 🍚 Pacote de arroz, 1× 🍖 Carne assada | 3 |  🔥 fogueira |
+| 🍢 Espetinho ×2 | 1× 🥩 Carne crua, 1× 🌲 Lenha | 1 |  🔥 fogueira |
+| ☕ Chocolate quente | 1× 🍫 Chocolate, 1× 🥛 Leite longa vida | 1 |  🔥 fogueira |
+| 🥤 Vitamina de frutas | 1× 🍌 Banana, 1× 🍒 Cerejas, 1× 🫗 Água suja | 1 | — |
+| 🥛 Shake de proteína | 1× 🥛 Leite longa vida, 1× 🥚 Ovo, 1× 🍯 Mel | 2 | — |
+| 🩹 Compressa estéril ×2 | 2× 🧵 Pano, 1× 🧪 Álcool | 2 | — |
+| 🧪 Iodo antisséptico | 1× 🧪 Álcool, 1× 🧂 Sal, 1× 🌿 Erva medicinal | 3 | — |
+| 🩺 Kit cirúrgico | 2× 🩹 Curativo, 2× 🩹 Compressa estéril, 1× 🔩 Sucata, 1× 🧪 Álcool | 6 | — |
+| 📎 Grampos ×4 | 1× ➰ Fio de cobre | 1 | — |
+| 🗝️ Gazua | 3× 📎 Grampos, 1× 🔲 Chapa de metal | 3 | — |
+| 🧤 Luvas de trabalho | 2× 🟫 Couro, 2× 🧵 Pano | 2 | — |
+| 🥾 Botas reforçadas | 3× 🟫 Couro, 2× ⚫ Borracha, 1× 🪢 Corda | 4 | — |
+| 🪢 Mangueira | 2× ⚫ Borracha, 1× 🧷 Fita adesiva | 2 | — |
+| 🔭 Binóculos | 2× 🧩 Plástico, 1× 🔲 Chapa de metal, 1× 🧴 Cola forte | 5 | — |
+| 🟩 Lona ×2 | 3× 🧵 Tecido grosso, 1× 🧷 Fita adesiva | 1 | — |
+| 🧰 Caixa de pregos | 12× 📌 Prego | 1 | — |
+| 🔪 Faca de caco | 1× 🍾 Garrafa vazia, 1× 🧷 Fita adesiva | 1 | — |
+| 📏 Vergalhão | 2× 🔲 Chapa de metal, 1× 🧷 Fita adesiva | 2 | — |
+| 🦯 Bengala de ferro | 1× 🔲 Chapa de metal, 1× 🌲 Lenha, 1× 🧷 Fita adesiva | 2 | — |
+| 🔱 Forcado | 2× 🌲 Lenha, 2× 🔲 Chapa de metal, 1× 🪢 Corda | 3 |  🛠️ bancada |
+| 🪓 Machadinha | 1× 🪓 Machado, 1× 🧷 Fita adesiva, 1× 🔲 Chapa de metal | 4 |  🛠️ bancada |
+| 🥋 Nunchaku | 2× 🌲 Lenha, 1× 🪢 Corda, 1× 🧷 Fita adesiva | 3 | — |
+| 🗡️ Baioneta | 1× 🔪 Faca, 1× 🔲 Chapa de metal, 1× 🧷 Fita adesiva | 4 |  🛠️ bancada |
+| 🔧 Pistola de pregos | 1× 🧰 Caixa de ferramentas, 2× 🌀 Mola, 1× 🔋 Bateria, 2× 🔲 Chapa de metal | 6 |  🛠️ bancada |
+| 🔫 Pistola pesada | 1× 🔫 Pistola 9mm, 1× 🧱 Barra de aço, 1× 🌀 Mola | 6 |  🛠️ bancada |
+| 🔫 Rifle de caça | 1× 🎯 Rifle, 1× 🧱 Barra de aço, 2× 🌀 Mola | 7 |  🛠️ bancada |
+| 🔫 Submetralhadora MP5 | 1× 🔫 Submetralhadora, 1× 🧱 Barra de aço, 2× 🌀 Mola, 1× 🧩 Plástico | 8 |  🛠️ bancada |
+| 🧥 Casaco longo | 4× 🧵 Tecido grosso, 1× 🟫 Couro, 1× 🧷 Fita adesiva | 3 | — |
+| 🥼 Traje de proteção | 4× 🧩 Plástico, 2× 🟩 Lona, 3× 🧷 Fita adesiva, 2× ⚫ Borracha | 6 |  🛠️ bancada |
+| 🛡️ Proteções esportivas | 3× 🧵 Tecido grosso, 3× 🧩 Plástico, 1× ⚫ Borracha | 3 | — |
+| 😷 Máscara de gás | 2× ⚫ Borracha, 1× 🧩 Plástico, 2× 🧵 Pano | 4 | — |
+| 🧢 Gorro de lã | 1× 🧵 Tecido grosso, 1× 🧵 Pano | 1 | — |
+| 🪖 Capacete com viseira | 1× ⛑️ Capacete de ciclista, 2× 🧩 Plástico, 1× 🧴 Cola forte | 3 | — |
+| 🎒 Mochila de acampamento | 2× 🟩 Lona, 3× 🧵 Tecido grosso, 2× 🪢 Corda | 4 | — |
+| 🦺 Colete de bolsos | 2× 🧵 Tecido grosso, 1× 🪢 Corda, 2× 🧵 Pano | 2 | — |
+| ⚙️ Peça de motor | 1× 🧱 Barra de aço, 2× ⚙️ Engrenagem, 1× 🛢️ Óleo de motor | 5 |  🛠️ bancada |
+| 🛢️ Tambor de combustível | 2× ⛽ Galão de gasolina, 2× 🔲 Chapa de metal | 5 |  🛠️ bancada |
+| 🤢 Bomba de fedor | 1× ⚗️ Produtos químicos, 1× 🍾 Garrafa vazia, 1× 🥩 Carne crua | 2 | — |
+| 💨 Gás lacrimogêneo | 1× ⚗️ Produtos químicos, 1× 🟡 Enxofre, 1× 🧩 Plástico | 5 |  🛠️ bancada |
 
 
 Fabricar dá XP de **Fabricação**, que também acelera a construção de barricadas.
@@ -558,6 +637,25 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 | 💉 Morfina | 0.1 | +45 vida, estanca sangramento, -15 energia |
 | 🧪 Antídoto | 0.1 | -40 infecção, +15 vida, proteção temporária |
 | 🦴 Tala improvisada | 0.5 | +22 vida, estanca sangramento |
+| 🌮 Taco | 0.3 | +32 fome |
+| 🌯 Burrito | 0.45 | +44 fome, +4 energia |
+| 🍢 Espetinho | 0.35 | +30 fome, +3 energia |
+| 🍉 Melancia | 1.2 | +18 fome, +30 sede |
+| 🍒 Cerejas | 0.15 | +8 fome, +6 sede, +4 energia |
+| 🥕 Cenoura | 0.2 | +12 fome, +2 vida |
+| 🥐 Croissant | 0.15 | +20 fome, +4 energia |
+| 🥯 Bagel | 0.2 | +24 fome |
+| 🥧 Torta doce | 0.4 | +30 fome, +12 energia |
+| 🍄 Cogumelo cru | 0.1 | +6 fome |
+| 🍄 Cogumelo assado | 0.1 | +22 fome, +3 energia |
+| ☕ Chocolate quente | 0.4 | +22 sede, +8 fome, +10 energia |
+| 🥛 Shake de proteína | 0.5 | +14 sede, +14 fome, +20 energia, +4 vida |
+| 💧 Água mineral | 0.5 | +42 sede |
+| 🥤 Vitamina de frutas | 0.5 | +28 sede, +12 fome, +3 vida |
+| 🩺 Kit cirúrgico | 1.2 | +75 vida, estanca sangramento, -10 infecção |
+| 🩹 Compressa estéril | 0.1 | +18 vida, estanca sangramento, -4 infecção |
+| 🍊 Vitamina C | 0.05 | +4 vida, -10 infecção, +6 energia |
+| 🧪 Iodo antisséptico | 0.2 | -28 infecção, +3 vida |
 
 
 ### Armas corpo a corpo
@@ -578,6 +676,9 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 | 🧥 Moletom grosso | 1 | 9% | Aquece e protege um pouco: −9% de dano. |
 | 🧥 Jaqueta de motoqueiro | 2.8 | 27% | Couro com proteções: −27% de dano. |
 | 🦺 Colete tático | 3.8 | 40% | Muito resistente: −40% de dano. |
+| 🧥 Casaco longo | 1.6 | 16% | Tecido grosso: −16% de dano. |
+| 🥼 Traje de proteção | 3 | 28% | −28% de dano e a infecção é bem mais difícil. |
+| 🛡️ Proteções esportivas | 2 | 20% | Joelheiras e coletes: −20% de dano. |
 
 
 ### Materiais, munição, ferramentas e utilitários
@@ -653,6 +754,20 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 | 🧵 Tecido grosso | 0.3 | Lona e brim resistentes. |
 | 🌿 Saquinho de ervas | 0.2 | Para chás e remédios caseiros. |
 | 🍋 Limão | 0.15 | Para limonada ou cozinhar. |
+| 🎒 Mochila de acampamento | 1.5 | +16 espaços, +28 kg. |
+| 🦺 Colete de bolsos | 0.9 | +7 espaços, +10 kg. Leve. |
+| 🗝️ Gazua | 0.1 | Tenha na mochila: abre portas trancadas em silêncio (chance depende de Garimpo). Pode quebrar. |
+| 🧤 Luvas de trabalho | 0.2 | Tenha na mochila: evita cortes ao quebrar vidro e pisar em cacos. |
+| 🥾 Botas reforçadas | 1.2 | Tenha na mochila: menos dano de armadilhas e menos cortes por cacos. |
+| 🪢 Mangueira | 0.4 | Tenha na mochila: permite sifonar combustível de veículos parados. |
+| 🔭 Binóculos | 0.5 | Tenha na mochila: enxerga um pouco mais longe à noite. |
+| 🤢 Bomba de fedor | 0.4 | Libera um barulho enorme por vários segundos e atrai zumbis para longe de você. |
+| 💨 Gás lacrimogêneo | 0.5 | Nuvem que atordoa e fere zumbis por ~10 s num raio médio. |
+| 📎 Grampos | 0.02 | Para fazer gazuas. |
+| ⚫ Pneu | 4 | Borracha pesada. Útil para trabalhos de oficina. |
+| 🟩 Lona | 0.8 | Cobertura resistente. |
+| 🛢️ Óleo de motor | 1 | Lubrifica e queima bem. |
+| 🧰 Caixa de pregos | 0.8 | Pregos soltos e fáceis de usar como munição. |
 
 
 ## 13. Progressão
@@ -704,6 +819,11 @@ Abra com **J** (ou pelo menu). Cumprir uma missão dá XP e recompensa.
 | Sinal de socorro | Usar o rádio ao ar livre | bateria e comida |
 | Cientista maluco | Explorar o laboratório | soro experimental |
 | Demolidor | Derrubar 3 paredes | metal e fita |
+| Mãos leves | Abrir 2 portas trancadas com gazua | grampos e luvas |
+| Sombra silenciosa | 3 mortes com golpe furtivo | apito e gorro |
+| Ladrão de gasolina | Sifonar combustível de um veículo | galão |
+| Duas rodas | Dirigir uma moto | capacete de moto |
+| Peso pesado | Dirigir um caminhão | peça de motor |
 | Ao volante | Entrar num veículo | galão de gasolina |
 | Atropelador | Atropelar 8 zumbis | kit de reparo e capacete |
 | Mecânico de campo | Consertar um veículo | caixa de ferramentas e chave inglesa |
@@ -798,7 +918,7 @@ O jogo é um arquivo HTML estático e o servidor é um programa Node pequeno. D�
 - **Pano + janela**: entre em prédios sem alarde quebrando o vidro com um pano; depois agache sobre os cacos.
 - **Bancada cedo**: coletes e munição caseira mudam o jogo. Armazéns e lojas de ferragens têm material.
 - **Ouro do laboratório**: químicos e baterias (com o rádio) valem o risco — mas leve armadura.
-- **Um carro muda tudo no mapa de 608×608:** ache um perto do início, abasteça e use as ruas retas. Leve galão extra e um kit de reparo.
+- **Um carro muda tudo no mapa de 992×992:** ache um perto do início, abasteça e use as ruas retas. Leve galão extra e um kit de reparo.
 - Cuidado ao **parar o carro no meio de uma horda**: zumbis batem na lataria. Saia pelo lado livre (você desce ao lado do carro).
 - Use o **mapa** para marcar o que já revistou e para achar suprimentos largados por helicópteros.
 
