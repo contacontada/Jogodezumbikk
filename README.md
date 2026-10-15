@@ -940,3 +940,5 @@ O jogo é um arquivo HTML estático e o servidor é um programa Node pequeno. D�
 ---
 
 *Feito em HTML, CSS e JavaScript puros (Canvas 2D), sem bibliotecas externas. O co-op usa um servidor Node com WebSocket.*
+
+https://contacontada.github.io/Jogodezumbikk/
