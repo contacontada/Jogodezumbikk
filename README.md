@@ -89,6 +89,19 @@ RPG 2D de sobrevivência zumbi, visto de cima, em **um único arquivo HTML**. Fu
 | Tanque | 170 | lento | 22 | Resistente. Recua pouco quando atingido. |
 | Gritador | 75 | médio | 7 | Raro. **Grita e atrai a horda.** Carrega a **chave do bunker**. |
 
+### Chefes (bosses) ☠
+Chefes são zumbis gigantes com habilidades próprias. Eles **aparecem de vez em quando** (a partir do dia 2, com chance crescente a cada manhã; sempre um por vez e o primeiro costuma vir no dia 3), saem **caçando** o jogador mais próximo e aparecem no mapa como um **ponto roxo ☠**. Alguns também **moram** nos locais novos. Uma **barra de vida** aparece embaixo da tela quando você chega perto. A vida deles cresce com os dias e com o número de jogadores na sala.
+
+| Chefe | Vida base | Habilidade | Como lidar | Drop lendário |
+| --- | --- | --- | --- | --- |
+| 🪓 **Açougueiro** | 520 | Mostra duas marcas vermelhas no chão e **investe** em linha reta (34 de dano). | Saia da linha no aviso; ataque depois da investida. | **Cutelo do Carniceiro** (+ carne) |
+| 🧪 **Cuspidor** | 380 | Cospe **poças de ácido** (círculo verde com aviso vermelho) que queimam por 7 s. | Não fique parado; use cobertura e mate de longe. | **Bombas de ácido ×3** |
+| 🔥 **Incendiário** | 450 | Deixa um **rastro de fogo**, lança chamas em volta de você, fica mais rápido abaixo de 35% de vida e **explode** ao morrer. | Mantenha distância e afaste-se do corpo. | **Machado em brasa** (+ napalm) |
+| 🐺 **Alfa** | 480 | **Uiva** a cada ~15 s e chama corredores e zumbis de reforço. | Mate-o rápido, ou fuja do bando. | **Presa do Alfa** |
+| 🗿 **Colosso** | 1100 | **Muito blindado:** tiros fracos quase não o ferem (explosivos e golpes fortes passam). **Pisão** em área (40 de dano) depois de um aviso. | Use explosivos, armas pesadas e afaste-se quando o círculo aparecer. | **Couraça do Colosso** |
+
+Todos os chefes também deixam um **kit médico** e **2 sorteios de saque raro** no chão. Eles não ficam atordoados e quase não são empurrados. O **círculo vermelho pulsando no chão** sempre significa perigo: saia de lá antes que ele feche. Todo o co-op funciona: os alertas, os círculos e a barra de vida aparecem para todos, e quem dá o golpe final ganha o crédito (missões).
+
 Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais corredores e tanques aparecem.
 
 ### Como eles te percebem
@@ -136,6 +149,9 @@ Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais cor
 | 🦯 Bengala de ferro | 21 | 52 | 0.45 | 1 | 75 | Surpreendentemente útil. |
 | 🥋 Nunchaku | 24 | 44 | 0.3 | 2 | 70 | Rápido e imprevisível. |
 | 🗡️ Baioneta | 26 | 38 | 0.34 | 1 | 45 | Lâmina militar. Furtiva. |
+| 🪓 Cutelo do Carniceiro | 62 | 46 | 0.62 | 2 | 120 | Lendário. Pertenceu ao Açougueiro. |
+| 🔥 Machado em brasa | 54 | 52 | 0.8 | 2 | 130 | Lendário. Corta árvores e ainda está quente. Era do Incendiário. |
+| 🦷 Presa do Alfa | 44 | 42 | 0.26 | 1 | 40 | Lendária. Muito rápida e silenciosa. Arrancada do Alfa. |
 
 - Dano sobe com a habilidade **Corpo a corpo** (+8% por nível) e o atributo **Força**.
 - **Machado** corta árvores; **pé de cabra** arromba portas trancadas; **martelo** barrica e desmonta construções.
@@ -185,6 +201,8 @@ Quanto mais dias você sobrevive e quanto mais perto do centro do mapa, mais cor
 
 O mapa é uma cidade enorme (**992×992 quadrados**, 40×40 quarteirões — cerca de 2,7× a área da versão anterior e mais de 60× a primeira; saves antigos continuam com o tamanho em que foram criados: 128, 176, 248, 416 ou 608) com ruas, quarteirões, florestas, parques e lagos. Os locais mais importantes são marcados no mapa quando você os descobre:
 
+> **Mundos novos x saves antigos:** os locais novos (quartel de bombeiros, farmácia, presídio, motel, cemitério, estação de rádio) e os chefes que moram neles só existem em **mundos criados a partir desta versão** (um save antigo regenera o mesmo mapa de antes, sem mudar nada). Os **chefes errantes** aparecem também nos saves antigos.
+
 | Local | O que tem |
 | --- | --- |
 | 🏠 **Casas** | Geladeiras, armários, camas, às vezes caixotes. Algumas portas são trancadas. |
@@ -204,6 +222,12 @@ O mapa é uma cidade enorme (**992×992 quadrados**, 40×40 quarteirões — cer
 | 🚗 **Ferro-velho** | Pátio cercado cheio de carcaças (porta-malas revistáveis), barris explosivos e alguns carros que funcionam. |
 | 🏞️ **Lagos** | Água para **pescar** e coletar água suja; cabana na margem. |
 | 🏚 **Bunker militar** | Trancado com a **chave do Gritador**. O melhor saque do jogo. |
+| 🚒 **Quartel de bombeiros** | *(mundos novos)* Armários e caixas com **machados de incêndio, mangueira, traje de proteção, botas, luvas, capacetes**, cordas e kits. Às vezes abriga o **Incendiário**. Caminhões na frente. |
+| 💊 **Farmácia** | *(mundos novos)* Prateleiras cheias de remédios: curativos, analgésicos, antibióticos, soro, vitaminas. |
+| ⛓️ **Presídio** | *(mundos novos)* Porta trancada, celas e muitos zumbis; armários com **cassetetes, estiletes, armas curtas, coletes, gás lacrimogêneo e gazuas**. Abriga o **Colosso**. |
+| 🏨 **Motel** | *(mundos novos)* Quartos com camas e armários: panos, comida, pilhas, mapas e munição. |
+| 🪦 **Cemitério e cripta** | *(mundos novos)* Túmulos e muitos zumbis ao ar livre. A **cripta** é trancada, tem saque raro (katana, arco, remédios) e abriga o **Alfa**. |
+| 📻 **Estação de rádio** | *(mundos novos)* Pequena e trancada: rádios, baterias, fios, engrenagens, mapas. |
 
 - **Revistar** (E): armários, geladeiras, caixotes, mochilas abandonadas, porta-malas de carros. Leva alguns segundos e faz um pouco de barulho. Depois de revistado, o recipiente pode ser reaberto livremente.
 - 🚁 **Helicópteros** podem largar caixas de suprimentos (aparecem no mapa como pontos dourados).
@@ -679,6 +703,7 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 | 🧥 Casaco longo | 1.6 | 16% | Tecido grosso: −16% de dano. |
 | 🥼 Traje de proteção | 3 | 28% | −28% de dano e a infecção é bem mais difícil. |
 | 🛡️ Proteções esportivas | 2 | 20% | Joelheiras e coletes: −20% de dano. |
+| 🛡️ Couraça do Colosso | 8 | 57% | Lendária. −58% de dano, mas muito pesada. |
 
 
 ### Materiais, munição, ferramentas e utilitários
@@ -768,6 +793,7 @@ Fabricar dá XP de **Fabricação**, que também acelera a construção de barri
 | 🟩 Lona | 0.8 | Cobertura resistente. |
 | 🛢️ Óleo de motor | 1 | Lubrifica e queima bem. |
 | 🧰 Caixa de pregos | 0.8 | Pregos soltos e fáceis de usar como munição. |
+| 🧪 Bomba de ácido | 0.5 | Cria uma poça de ácido que queima por vários segundos (zumbis e jogadores). |
 
 
 ## 13. Progressão
@@ -806,6 +832,12 @@ Abra com **J** (ou pelo menu). Cumprir uma missão dá XP e recompensa.
 | Plantão | Explorar o hospital | kit médico e antibiótico |
 | Lei e ordem | Entrar na delegacia (porta trancada) | munição |
 | Caçada ao Gritador | Derrotar o Gritador | kit médico |
+| Caçador de chefes | Derrotar 1 chefe | 2 kits médicos e munição 9mm |
+| Lenda da sobrevivência | Derrotar 3 chefes | colete balístico e munição 7,62 |
+| Pena máxima | Entrar no presídio | gazua e colete |
+| Farmácia de plantão | Entrar numa farmácia | curativos e analgésicos |
+| Chamas no quartel | Entrar no quartel de bombeiros | luvas e botas |
+| Descanse em paz | Abrir a cripta do cemitério | lanterna e antibiótico |
 | Segredo militar | Abrir o bunker com a chave do Gritador | soro experimental |
 | Sobrevivente | Chegar ao dia 4 | mochila militar |
 | Entrada discreta | Quebrar 3 janelas | panos e fita |
@@ -837,6 +869,7 @@ As missões que dependem de um local mostram a direção (ex.: "ao norte").
 - **Um dia dura cerca de 12 minutos reais.** Dormindo, o tempo passa bem mais rápido.
 - **Noite:** a tela escurece e a visão cai. A **lanterna** ajuda; fogueiras iluminam.
 - **Clima:** 🌧 **chuva** abafa seus passos; 🌫 **neblina** reduz a visão (sua e dos zumbis).
+- **Chefes errantes ☠:** a partir do dia 2 um chefe pode aparecer de manhã e sair te caçando (ponto roxo no mapa). Veja a seção *Chefes*.
 - **Eventos:** helicópteros podem largar suprimentos 🚁 (ponto dourado no mapa) e, a partir do dia 2, **hordas** podem se formar nas ruas (ponto vermelho no mapa).
 - **Dificuldade cresce:** a cada dia surgem mais corredores e tanques, e zumbis novos aparecem.
 
@@ -913,6 +946,7 @@ O jogo é um arquivo HTML estático e o servidor é um programa Node pequeno. D�
 - **À noite**, fique no abrigo: durma, cozinhe na fogueira e organize o baú.
 - **Construa dentro da casa ou num lote vazio**, com portão voltado para onde você vigia, e uma cama extra para atrair um sobrevivente.
 - **Barris vermelhos** são armas: puxe os zumbis até eles e atire de longe.
+- **Chefes:** nunca lute com um chefe sem espaço para correr. Procure o **círculo vermelho no chão** e saia dele; use **explosivos** contra o Colosso, **distância** contra Cuspidor e Incendiário, **cobertura** contra o Açougueiro. O espólio lendário vale muito.
 - **Gritador:** mate-o longe de outros zumbis (o grito atrai todos) e pegue a **chave do bunker**.
 - **Cerque o abrigo de armadilhas** (e lembre onde estão!). Uma **fazenda** ao lado da casa, uma **vara de pesca** e uma fogueira garantem comida sem sair à rua.
 - **Pano + janela**: entre em prédios sem alarde quebrando o vidro com um pano; depois agache sobre os cacos.
@@ -940,5 +974,3 @@ O jogo é um arquivo HTML estático e o servidor é um programa Node pequeno. D�
 ---
 
 *Feito em HTML, CSS e JavaScript puros (Canvas 2D), sem bibliotecas externas. O co-op usa um servidor Node com WebSocket.*
-
-https://contacontada.github.io/Jogodezumbikk/
